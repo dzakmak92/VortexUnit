@@ -1,0 +1,17 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VortexUnit">
+  <defs>
+    <linearGradient id="vx-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.5" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <!-- Three swirling vortex blades -->
+  <g>
+    <path d="M20 20 C20 9 27 3 34 6 C29 8 27 13 27 20 C27 27 24 31 20 31 Z" fill="url(#vx-grad)" opacity="0.95"/>
+    <path d="M20 20 C31 20 37 27 34 34 C32 29 27 27 20 27 C13 27 9 24 9 20 Z" fill="url(#vx-grad)" opacity="0.75" transform="rotate(0 20 20)"/>
+    <path d="M20 20 C20 31 13 37 6 34 C11 32 13 27 13 20 C13 13 16 9 20 9 Z" fill="url(#vx-grad)" opacity="0.6"/>
+  </g>
+  <circle cx="20" cy="20" r="3.4" fill="#0A0A0F"/>
+  <circle cx="20" cy="20" r="1.6" fill="url(#vx-grad)"/>
+</svg>

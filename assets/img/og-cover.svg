@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d0e1c"/><stop offset="1" stop-color="#08080d"/>
+    </linearGradient>
+    <linearGradient id="g" x1="120" y1="120" x2="1080" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818cf8"/><stop offset="0.5" stop-color="#c084fc"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.2" r="0.8">
+      <stop stop-color="#6366f1" stop-opacity="0.45"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(96 210)">
+    <g transform="scale(3)">
+      <path d="M20 20 C20 9 27 3 34 6 C29 8 27 13 27 20 C27 27 24 31 20 31 Z" fill="url(#g)"/>
+      <path d="M20 20 C31 20 37 27 34 34 C32 29 27 27 20 27 C13 27 9 24 9 20 Z" fill="url(#g)" opacity="0.8"/>
+      <path d="M20 20 C20 31 13 37 6 34 C11 32 13 27 13 20 C13 13 16 9 20 9 Z" fill="url(#g)" opacity="0.62"/>
+    </g>
+  </g>
+  <text x="240" y="290" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-2">VortexUnit</text>
+  <text x="242" y="352" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="500" fill="#b7bad0">Dienstleistungen in der automatischen Datenverarbeitung</text>
+  <text x="96" y="500" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="#c9b8ff">SaaS · Software · Datenlösungen — Made in Germany</text>
+  <rect x="96" y="540" width="1008" height="2" fill="#26263c"/>
+  <text x="96" y="590" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" font-weight="500" fill="#6b7280">SmartCart   ·   Everly   ·   ServiceMarket</text>
+</svg>

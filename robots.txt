@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vortexunit.de/sitemap.xml
