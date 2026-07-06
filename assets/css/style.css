@@ -278,6 +278,12 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .m-block { height: 64px; border-radius: 12px; background: var(--bg-soft); border: 1px solid var(--line); }
 .m-pill { padding: .3em .8em; border-radius: 999px; font-size: .72rem; font-weight: 600; }
 
+/* Real screenshot inside device frame */
+.mock--shot { padding: 20px; }
+.mock--shot .mock-screen { border-radius: 22px; background: #f4f3fb; }
+.mock--shot .mock-screen img { display: block; width: 100%; height: auto; }
+.mock-caption { position: relative; z-index: 1; margin-top: 14px; text-align: center; font-size: .8rem; color: rgba(255,255,255,.6); }
+
 /* ---------- Split / value section ---------- */
 .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
 .val-list { display: grid; gap: 22px; margin-top: 30px; }

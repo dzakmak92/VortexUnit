@@ -113,9 +113,15 @@ Die dargestellten Produkte stammen aus den zugehörigen Repositories:
 | **Everly** | Familien-App von Schwangerschaft bis Familienalltag; 7 Module, „Mum&Me“ dauerhaft kostenlos, local-first. |
 | **ServiceMarket** | „Control-Room“-Dashboard für Dienstleister: Kalender, Agenda, „Up Next“, Auftrags-Pipeline. |
 
-Die Produkt-Mockups auf der Seite sind schlanke, in den jeweiligen Markenfarben
-gestaltete CSS-Nachbildungen (keine externen Screenshots → keine externen Requests).
-Echte Screenshots können später als optimierte Bilder ergänzt werden.
+**SmartCart** und **Everly** werden mit **echten App-Screenshots** dargestellt
+(`assets/img/products/`, lokal eingebunden → keine externen Requests). Die
+Screenshots stammen aus den jeweiligen Produkt-Repos.
+
+Für **ServiceMarket** liegt (noch) kein fertiger Screenshot im Repo vor; hier wird
+eine schlanke, in den Markenfarben (Pine Teal) gestaltete CSS-Nachbildung des
+Dashboards gezeigt. Sobald ein echter Screenshot vorliegt, kann er analog unter
+`assets/img/products/` abgelegt und die `.mock`-Kachel in `index.html`/`produkte.html`
+ersetzt werden.
 
 ---
 
