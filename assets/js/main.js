@@ -108,12 +108,12 @@
     requestAnimationFrame(sDraw);
   }
 
-  /* ---- Background film: hidden on the hero and at the bottom, scrubbed slowly through the middle.
+  /* ---- Background film: hidden on the hero, played in full through the four scenes, then it gives way to the offer.
           60 frames in 5 sprite sheets; each scene caption is pinned to its moment of the film. ---- */
   var bg = document.querySelector(".bgfilm"), fc = document.getElementById("film");
   if (bg && fc && fc.getContext) {
     var fctx = fc.getContext("2d"), veil = bg.querySelector(".veil"), sheets = [], FR = 60, PER = 12, COLS = 4, FW = 960, FH = 540, current = -1;
-    var heroEl = document.querySelector(".hero"), endEl = document.getElementById("kontakt");
+    var heroEl = document.querySelector(".hero"), endEl = document.getElementById("angebot");
     var scenes = Array.prototype.slice.call(document.querySelectorAll("[data-scene]"));
     var sceneFrame = [5, 22, 41, 57];                       // chaos, vortex, milestones, result
     var dots = document.querySelectorAll(".film-progress span"), prog = document.querySelector(".film-progress");
@@ -124,7 +124,7 @@
       var d = Math.min(window.devicePixelRatio || 1, 2);
       fc.width = Math.round(window.innerWidth * d); fc.height = Math.round(vh * d);
       fadeIn = topOf(heroEl) + heroEl.offsetHeight - vh * 0.75;          // film starts as the hero leaves
-      fadeOut = endEl ? topOf(endEl) - vh * 0.9 : document.body.scrollHeight;   // and is gone before the contact card
+      fadeOut = endEl ? topOf(endEl) - vh * 0.75 : document.body.scrollHeight;  // last frame as the offer arrives, then it fades
       sceneY = scenes.map(function (el) { return topOf(el) + el.offsetHeight / 2 - vh / 2; });
       anchors = [[fadeIn, 0]].concat(sceneY.map(function (y, i) { return [y, sceneFrame[i] || 0]; })).concat([[fadeOut, FR - 1]]);
       current = -1; update();

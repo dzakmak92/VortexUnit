@@ -40,7 +40,7 @@
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <!-- Background film: hidden at the top and bottom, plays slowly while scrolling through the middle -->
+  <!-- Background film: hidden on the hero, plays in full through the four scenes, then gives way to the offer -->
   <div class="bgfilm" aria-hidden="true">
     <canvas id="film"></canvas>
     <div class="veil"></div>
@@ -143,8 +143,19 @@
       </div>
     </section>
 
-    <!-- AUDIENCES -->
-    <section class="section">
+    <!-- SCENE 3: the background film shows clearly here -->
+    <section class="scene" data-scene="3" aria-label="04 · Ergebnis">
+      <div class="container">
+        <div class="scene-copy reveal">
+          <span class="label">04 · Ergebnis</span>
+          <h2>Skalierbare <em class="s">Ergebnisse.</em></h2>
+          <p>Ein System, das für Sie arbeitet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIENCES: the film has finished, the offer takes over -->
+    <section class="section" id="angebot">
       <div class="container duo">
         <article class="aud glass reveal" id="unternehmen">
           <img class="art" src="assets/img/hf/glass-business.webp" width="292" height="380" alt="" loading="lazy" />
@@ -187,16 +198,6 @@
       </div>
     </section>
 
-    <!-- SCENE 3: the background film shows clearly here -->
-    <section class="scene" data-scene="3" aria-label="04 · Ergebnis">
-      <div class="container">
-        <div class="scene-copy reveal">
-          <span class="label">04 · Ergebnis</span>
-          <h2>Skalierbare <em class="s">Ergebnisse.</em></h2>
-          <p>Ein System, das für Sie arbeitet.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- PROCESS -->
     <section class="section" id="ablauf">
