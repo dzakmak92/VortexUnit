@@ -40,6 +40,13 @@
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
 
+  <!-- Background film: hidden at the top and bottom, plays slowly while scrolling through the middle -->
+  <div class="bgfilm" aria-hidden="true">
+    <canvas id="film"></canvas>
+    <div class="veil"></div>
+  </div>
+  <div class="film-progress" aria-hidden="true"><span>Chaos</span><span>Wirbel</span><span>Meilensteine</span><span>Ergebnis</span></div>
+
   <header class="site-header">
     <div class="container nav">
       <a href="#top" class="brand" aria-label="VortexUnit — zum Seitenanfang">
@@ -95,21 +102,14 @@
       </div>
     </section>
 
-    <!-- FILM: scroll to make the ribbon rise -->
-    <section class="film" id="weg" aria-label="Ihr Weg nach oben">
-      <div class="film-stick">
-        <div class="film-frame">
-          <canvas id="film" aria-hidden="true"></canvas>
-          <div class="film-copy">
-            <span class="label">Vom Chaos zum Ergebnis</span>
-            <div class="beats">
-              <div class="beat on"><h2>Ideen, Aufgaben, Projekte, <em class="s">Content.</em></h2><p>Alles gleichzeitig, alles verstreut. So fühlt sich Wachstum ohne System an.</p></div>
-              <div class="beat"><h2>Wir bringen alles <em class="s">in Bewegung.</em></h2><p>Ein Wirbel, der Chaos sammelt und in eine Richtung lenkt.</p></div>
-              <div class="beat"><h2>Ordnen. Verbinden. <em class="s">Meilensteine.</em></h2><p>Aus Einzelteilen werden Abläufe, aus Abläufen messbare Etappen.</p></div>
-              <div class="beat"><h2>Skalierbare <em class="s">Ergebnisse.</em></h2><p>Ein System, das wächst, auch wenn Sie es gerade nicht tun.</p></div>
-            </div>
-          </div>
-          <div class="film-progress" aria-hidden="true"><span class="on">Chaos</span><span>Wirbel</span><span>Meilensteine</span><span>Ergebnis</span></div>
+
+    <!-- SCENE 0: the background film shows clearly here -->
+    <section class="scene" id="weg" data-scene="0" aria-label="01 · Chaos">
+      <div class="container">
+        <div class="scene-copy reveal">
+          <span class="label">01 · Chaos</span>
+          <h2>Ideen, Aufgaben, Projekte, <em class="s">Content.</em></h2>
+          <p>Alles gleichzeitig, alles verstreut. So fühlt sich Wachstum ohne System an.</p>
         </div>
       </div>
     </section>
@@ -136,8 +136,19 @@
       </div>
     </section>
 
+    <!-- SCENE 1: the background film shows clearly here -->
+    <section class="scene" data-scene="1" aria-label="02 · Wirbel">
+      <div class="container">
+        <div class="scene-copy reveal">
+          <span class="label">02 · Wirbel</span>
+          <h2>Wir bringen alles <em class="s">in Bewegung.</em></h2>
+          <p>Ein Wirbel, der das Chaos sammelt und in eine Richtung lenkt.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- MILESTONES -->
-    <section class="section" aria-labelledby="ms-h" style="padding-top:0">
+    <section class="section" aria-labelledby="ms-h">
       <div class="container">
         <div class="head reveal">
           <span class="label">Ihre Reise zum Wachstum</span>
@@ -154,8 +165,19 @@
       </div>
     </section>
 
+    <!-- SCENE 2: the background film shows clearly here -->
+    <section class="scene" data-scene="2" aria-label="03 · Meilensteine">
+      <div class="container">
+        <div class="scene-copy reveal">
+          <span class="label">03 · Meilensteine</span>
+          <h2>Ordnen. Verbinden. <em class="s">Meilensteine.</em></h2>
+          <p>Aus Einzelteilen werden Abläufe, aus Abläufen messbare Etappen.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- AUDIENCES -->
-    <section class="section" style="padding-top:0">
+    <section class="section">
       <div class="container duo">
         <article class="aud glass reveal" id="unternehmen">
           <img class="art" src="assets/img/hf/glass-business.webp" width="292" height="380" alt="" loading="lazy" />
@@ -212,8 +234,19 @@
       </div>
     </section>
 
+    <!-- SCENE 3: the background film shows clearly here -->
+    <section class="scene" data-scene="3" aria-label="04 · Ergebnis">
+      <div class="container">
+        <div class="scene-copy reveal">
+          <span class="label">04 · Ergebnis</span>
+          <h2>Skalierbare <em class="s">Ergebnisse.</em></h2>
+          <p>Ein System, das wächst, auch wenn Sie es gerade nicht tun.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- PROCESS -->
-    <section class="section" id="ablauf" style="padding-top:0">
+    <section class="section" id="ablauf">
       <div class="container">
         <div class="head center reveal">
           <span class="label">In 3 einfachen Schritten</span>

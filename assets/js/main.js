@@ -105,50 +105,76 @@
     requestAnimationFrame(sDraw);
   }
 
-  /* ---- Film: the ribbon rises through the rings as you scroll (60 frames in 5 sprite sheets) ---- */
-  var film = document.querySelector(".film"), fc = document.getElementById("film");
-  if (film && fc && fc.getContext) {
-    var fctx = fc.getContext("2d"), sheets = [], loaded = 0, FR = 60, PER = 12, COLS = 4, FW = 960, FH = 540, current = -1;
-    var beats = film.querySelectorAll(".beat"), dots = film.querySelectorAll(".film-progress span");
-    function fSize() {
+  /* ---- Background film: hidden on the hero and at the bottom, scrubbed slowly through the middle.
+          60 frames in 5 sprite sheets; each scene caption is pinned to its moment of the film. ---- */
+  var bg = document.querySelector(".bgfilm"), fc = document.getElementById("film");
+  if (bg && fc && fc.getContext) {
+    var fctx = fc.getContext("2d"), veil = bg.querySelector(".veil"), sheets = [], FR = 60, PER = 12, COLS = 4, FW = 960, FH = 540, current = -1;
+    var heroEl = document.querySelector(".hero"), endEl = document.getElementById("kontakt");
+    var scenes = Array.prototype.slice.call(document.querySelectorAll("[data-scene]"));
+    var sceneFrame = [5, 22, 41, 57];                       // chaos, vortex, milestones, result
+    var dots = document.querySelectorAll(".film-progress span"), prog = document.querySelector(".film-progress");
+    var anchors = [], fadeIn = 0, fadeOut = 0, sceneY = [], vh = window.innerHeight;
+    function topOf(el) { var y = 0; while (el) { y += el.offsetTop; el = el.offsetParent; } return y; }
+    function layout() {
+      vh = window.innerHeight;
       var d = Math.min(window.devicePixelRatio || 1, 2);
-      fc.width = Math.round(fc.clientWidth * d); fc.height = Math.round(fc.clientHeight * d);
-      current = -1; fUpdate();
+      fc.width = Math.round(window.innerWidth * d); fc.height = Math.round(vh * d);
+      fadeIn = topOf(heroEl) + heroEl.offsetHeight - vh * 0.75;          // film starts as the hero leaves
+      fadeOut = endEl ? topOf(endEl) - vh * 0.9 : document.body.scrollHeight;   // and is gone before the contact card
+      sceneY = scenes.map(function (el) { return topOf(el) + el.offsetHeight / 2 - vh / 2; });
+      anchors = [[fadeIn, 0]].concat(sceneY.map(function (y, i) { return [y, sceneFrame[i] || 0]; })).concat([[fadeOut, FR - 1]]);
+      current = -1; update();
+    }
+    function frameAt(y) {
+      if (y <= anchors[0][0]) return 0;
+      for (var i = 1; i < anchors.length; i++) {
+        var a = anchors[i - 1], b = anchors[i];
+        if (y <= b[0]) return a[1] + (b[1] - a[1]) * (y - a[0]) / Math.max(1, b[0] - a[0]);
+      }
+      return FR - 1;
     }
     function drawFrame(n) {
-      var s = sheets[Math.floor(n / PER)];
-      if (!s || !s.complete || !s.naturalWidth) return false;
+      var sh = sheets[Math.floor(n / PER)];
+      if (!sh || !sh.complete || !sh.naturalWidth) return false;
       var k = n % PER, sx = (k % COLS) * FW, sy = Math.floor(k / COLS) * FH;
       var cw = fc.width, ch = fc.height, scale = Math.max(cw / FW, ch / FH);
-      var dw = FW * scale, dh = FH * scale, dy = (ch - dh) / 2;
-      // keep the ribbon (about 55% across the frame) right of the copy on wide screens, centred on phones
-      var dx = cw * (cw > ch ? 0.64 : 0.5) - dw * 0.55;
-      if (dw >= cw) dx = Math.max(cw - dw, Math.min(0, dx));
-      if (dx > 0) fctx.drawImage(s, sx + 2, sy, 2, FH, 0, dy, dx + 2, dh);              // extend the backdrop
-      if (dx + dw < cw) fctx.drawImage(s, sx + FW - 4, sy, 2, FH, dx + dw - 2, dy, cw - dx - dw + 2, dh);
-      fctx.drawImage(s, sx, sy, FW, FH, dx, dy, dw, dh);
+      var dw = FW * scale, dh = FH * scale;
+      var dx = cw * 0.5 - dw * (cw > ch ? 0.5 : 0.56), dy = (ch - dh) / 2;
+      dx = Math.max(cw - dw, Math.min(0, dx));
+      fctx.drawImage(sh, sx, sy, FW, FH, dx, dy, dw, dh);
       return true;
     }
-    function fUpdate() {
-      var r = film.getBoundingClientRect(), total = film.offsetHeight - window.innerHeight;
-      var prog = Math.max(0, Math.min(1, -r.top / (total || 1)));
-      var n = reduceMotion ? FR - 1 : Math.min(FR - 1, Math.floor(prog * FR));
-      if (n !== current && drawFrame(n)) current = n;
-      var b = reduceMotion ? beats.length - 1 : Math.min(beats.length - 1, Math.floor(prog * beats.length * 0.999));
-      beats.forEach(function (el, i) { el.classList.toggle("on", i === b); });
-      dots.forEach(function (el, i) { el.classList.toggle("on", i <= b); });
+    function clamp(v) { return Math.max(0, Math.min(1, v)); }
+    function update() {
+      var y = window.scrollY;
+      var vis = clamp((y - fadeIn) / (vh * 0.6)) * (1 - clamp((y - fadeOut + vh * 0.2) / (vh * 0.6)));
+      bg.style.opacity = vis.toFixed(3);
+      if (prog) prog.style.opacity = vis > 0.5 ? "1" : "0";
+      if (vis > 0) {
+        var n = Math.max(0, Math.min(FR - 1, Math.round(frameAt(y))));
+        if (n !== current && drawFrame(n)) current = n;
+      }
+      // the veil lifts while a scene is centred, and returns over the content sections
+      var near = 0;
+      for (var i = 0; i < sceneY.length; i++) near = Math.max(near, 1 - Math.abs(y - sceneY[i]) / (vh * 0.7));
+      if (veil) veil.style.opacity = (1 - clamp(near) * 0.92).toFixed(3);
+      var active = -1;
+      for (var j = 0; j < sceneY.length; j++) if (y >= sceneY[j] - vh * 0.5) active = j;
+      dots.forEach(function (el, i) { el.classList.toggle("on", i <= active); });
     }
     for (var si = 0; si < 5; si++) {
       var im = new Image();
       im.decoding = "async";
-      im.onload = function () { loaded++; current = -1; fUpdate(); };
+      im.onload = function () { current = -1; update(); };
       im.src = "assets/img/hf/film-" + si + ".webp";
       sheets.push(im);
     }
     var ticking = false;
-    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; fUpdate(); }); } }, { passive: true });
-    window.addEventListener("resize", fSize);
-    fSize();
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; update(); }); } }, { passive: true });
+    window.addEventListener("resize", layout);
+    window.addEventListener("load", layout);
+    layout();
   }
 
   /* ---- Chaos → clarity: picture settles, the arrow draws, checks tick one by one ---- */
