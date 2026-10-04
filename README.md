@@ -13,34 +13,36 @@ default**.
 ## 📁 Struktur
 
 ```
-index.html            Landingpage (Hero, Leistungen, Ablauf, Vorteile, Beispiele, FAQ, Kontaktformular)
+index.html            Landingpage (Hero, Unternehmen, Creator, Ablauf, Kontaktformular)
 impressum.html        Impressum (§ 5 DDG)
 datenschutz.html      Datenschutzerklärung (DSGVO)
 agb.html              Allgemeine Geschäftsbedingungen
 404.html              Fehlerseite
 leistungen.html · ueber-uns.html · kontakt.html · produkte.html
-                      Nur noch Weiterleitungen auf die passenden Abschnitte der Startseite
+                      Nur noch Weiterleitungen auf die Startseite der Startseite
                       (damit alte Links nicht ins Leere laufen; noindex)
 assets/
-  css/style.css       Design-System „Ruhe“ (hell, ein Violett-Akzent, sanfte Farbwolke)
-  js/main.js          Navigation, Abschnitts-Markierung, Scroll-Reveal, Formular
-  fonts/              Hanken Grotesk 400–800 (selbst gehostet, SIL OFL – siehe OFL.txt)
-  img/                Logo, Favicon (SVG), Social-Vorschaubild og-cover.png (1200×630)
+  css/style.css       Design-System „Ribbon“ (dunkel, Platin, ein Violett-Akzent)
+  js/main.js          Navigation, Hero-Animation, Scroll-Reveal, Formular
+  fonts/              Hanken Grotesk + Newsreader (selbst gehostet, SIL OFL)
+  img/                Logo (hell/dunkel), Favicon (SVG), Social-Vorschaubild og-cover.png
 robots.txt · sitemap.xml · site.webmanifest
 ```
 
 ## 🎨 Design
 
-- **Richtung „Ruhe“:** heller, ruhiger Auftritt für B2B-Kunden – Off-White, Tinte, ein
-  Violett-Akzent (#6B4FE8). Die Logo-Farben Violett/Cyan erscheinen nur als weiche
-  Farbwolke hinter dem Hero und dem Seitenkopf.
-- **Schrift:** Hanken Grotesk, **selbst gehostet** unter `assets/fonts/` – kein Request an
-  Google, also DSGVO-unbedenklich.
-- **Aufbau der Landingpage (auf Conversion ausgelegt):** Hero mit Nutzenversprechen und
-  zwei CTAs → Vertrauenspunkte → Technologien → typische Probleme → Leistungen (Bento-Raster)
-  → Ablauf in 4 Schritten → Vorteile → Beispielprojekte (vorher/nachher) → FAQ → Kontakt.
-  Jeder Abschnitt führt zum Erstgespräch.
-- **Keine eigenen Produkte auf der Seite** – bewusst reine Dienstleistungs-Landingpage.
+- **Logo:** ein einziges Band, oben eingerollt und in der Mitte einmal gefaltet, das ein V
+  bildet. `assets/img/logo.svg` (Platin, für dunkle Flächen), `logo-light.svg` (für helle
+  Flächen), `favicon.svg` (App-Icon auf Violett). Handgezeichnete Vektoren nach dem
+  Identity-Sheet.
+- **Wortmarke:** „VortexUnit“ in Newsreader (Serif); Claim „Software. Daten. Wachstum.“
+- **Look:** dunkles Tintenblau, Platin-Schrift, ein Violett-Akzent. Im Hero dreht sich ein
+  feines Möbius-Band (Canvas, pausiert außerhalb des Sichtfelds, statisch bei
+  „Bewegung reduzieren“).
+- **Aufbau:** bewusst wenig Text – Hero mit zwei Wegen (Unternehmen / Creator),
+  Leistungs-Ticker, je eine Karte pro Zielgruppe, ein Satz als Statement, drei Schritte,
+  Kontaktformular mit „Ich bin Unternehmen / Creator“.
+- **Schriften selbst gehostet** (Hanken Grotesk, Newsreader; SIL OFL) – kein Request an Google.
 - **Sprache:** Deutsch, Sie-Form.
 
 ## ✅ VOR DEM LIVE-GANG AUSFÜLLEN (wichtig!)
