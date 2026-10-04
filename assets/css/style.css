@@ -130,6 +130,8 @@ p{margin:0}
 .film-progress span.on{color:var(--ink)}
 .film-progress span.on::before{background:var(--violet);box-shadow:0 0 0 4px rgba(107,79,232,.2),0 0 16px rgba(107,79,232,.7)}
 .scene{min-height:100vh;display:flex;align-items:center;scroll-margin-top:0}
+.hero + .scene{margin-top:-30vh}  /* the chaos scene starts while the hero is still dissolving */
+@media (max-width:760px){.hero + .scene{margin-top:-70vh}}
 .scene-copy{max-width:560px;display:flex;flex-direction:column;gap:16px;text-shadow:0 0 28px rgba(255,255,255,.95),0 0 10px rgba(255,255,255,.8)}
 .scene-copy h2{font-size:clamp(40px,5.6vw,76px)}
 .scene-copy p{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:36ch}

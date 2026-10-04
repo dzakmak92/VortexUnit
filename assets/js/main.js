@@ -76,7 +76,7 @@
   var heroBox = document.querySelector(".hero"), heroExit = 0;
   function onHeroScroll() {
     if (!heroBox) return;
-    heroExit = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.6)));
+    heroExit = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.35)));
     heroBox.style.setProperty("--exit", heroExit.toFixed(3));
   }
   window.addEventListener("scroll", onHeroScroll, { passive: true });
@@ -145,7 +145,7 @@
       vh = window.innerHeight;
       var d = Math.min(window.devicePixelRatio || 1, 2);
       fc.width = Math.round(window.innerWidth * d); fc.height = Math.round(vh * d);
-      fadeIn = topOf(heroEl) + vh * 0.18;                                 // film fades in while the hero dissolves
+      fadeIn = topOf(heroEl) + vh * 0.04;                                 // film fades in while the hero dissolves
       fadeOut = endEl ? topOf(endEl) - vh * 0.75 : document.body.scrollHeight;  // last frame as the offer arrives, then it fades
       sceneY = scenes.map(function (el) { return topOf(el) + el.offsetHeight / 2 - vh / 2; });
       anchors = [[fadeIn, 0]].concat(sceneY.map(function (y, i) { return [y, sceneFrame[i] || 0]; })).concat([[fadeOut, FR - 1]]);
@@ -173,7 +173,7 @@
     function clamp(v) { return Math.max(0, Math.min(1, v)); }
     function update() {
       var y = window.scrollY;
-      var vis = clamp((y - fadeIn) / (vh * 0.6)) * (1 - clamp((y - fadeOut + vh * 0.2) / (vh * 0.6)));
+      var vis = clamp((y - fadeIn) / (vh * 0.35)) * (1 - clamp((y - fadeOut + vh * 0.2) / (vh * 0.6)));
       bg.style.opacity = vis.toFixed(3);
       if (prog) prog.style.opacity = vis > 0.5 ? "1" : "0";
       if (vis > 0) {
