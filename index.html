@@ -3,381 +3,369 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VortexUnit — Dienstleistungen in der automatischen Datenverarbeitung</title>
-  <meta name="description" content="VortexUnit entwickelt moderne SaaS-Produkte, individuelle Software und Datenlösungen. Dienstleistungen in der automatischen Datenverarbeitung – Made in Germany, DSGVO-konform." />
-  <meta name="theme-color" content="#0b0b14" />
+  <title>VortexUnit — Software, SaaS &amp; Datenautomatisierung für Unternehmen</title>
+  <meta name="description" content="VortexUnit entwickelt individuelle Software, SaaS-Plattformen und Datenautomatisierungen – von der Idee bis zum sicheren Betrieb. DSGVO-konform, Hosting in der EU. Jetzt kostenloses Erstgespräch vereinbaren." />
+  <meta name="theme-color" content="#FBFBFD" />
   <link rel="canonical" href="https://vortexunit.de/" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
   <link rel="manifest" href="site.webmanifest" />
+  <link rel="preload" href="assets/fonts/hanken-grotesk-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/hanken-grotesk-400.woff2" as="font" type="font/woff2" crossorigin />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VortexUnit" />
-  <meta property="og:title" content="VortexUnit — Automatische Datenverarbeitung & SaaS aus Deutschland" />
-  <meta property="og:description" content="Moderne SaaS-Produkte, individuelle Software und Datenlösungen. DSGVO-konform, Made in Germany." />
+  <meta property="og:title" content="VortexUnit — Software, die Ihre Daten für Sie arbeiten lässt" />
+  <meta property="og:description" content="Individuelle Software, SaaS und Datenautomatisierung – geplant, gebaut und betrieben von einem Team. DSGVO-konform, Hosting in der EU." />
   <meta property="og:url" content="https://vortexunit.de/" />
-  <meta property="og:image" content="https://vortexunit.de/assets/img/og-cover.svg" />
+  <meta property="og:image" content="https://vortexunit.de/assets/img/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "VortexUnit",
     "url": "https://vortexunit.de",
-    "description": "Dienstleistungen in der automatischen Datenverarbeitung – SaaS-Produkte, Softwareentwicklung und Datenlösungen.",
+    "description": "Individuelle Softwareentwicklung, SaaS-Plattformen, Datenautomatisierung und KI-Integration für Unternehmen.",
     "logo": "https://vortexunit.de/assets/img/logo.svg",
     "email": "info@vortexunit.de",
-    "areaServed": "DE",
-    "sameAs": []
+    "areaServed": ["DE", "AT", "CH"],
+    "knowsAbout": ["Softwareentwicklung", "SaaS", "Datenverarbeitung", "Automatisierung", "KI-Integration", "Cloud"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Was kostet ein Projekt?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt vom Umfang ab. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit klarem Leistungsumfang und Festpreis oder Budgetrahmen – bevor Kosten entstehen."}},
+      {"@type": "Question", "name": "Wie lange dauert die Umsetzung?", "acceptedAnswer": {"@type": "Answer", "text": "Ein klar umrissenes Automatisierungsprojekt ist oft in wenigen Wochen produktiv. Größere Plattformen planen wir in Etappen, mit einer ersten nutzbaren Version nach etwa sechs bis zwölf Wochen."}},
+      {"@type": "Question", "name": "Wem gehört der Quellcode?", "acceptedAnswer": {"@type": "Answer", "text": "Ihnen. Nach vollständiger Bezahlung erhalten Sie den Quellcode und alle Zugänge."}},
+      {"@type": "Question", "name": "Wo werden unsere Daten gespeichert?", "acceptedAnswer": {"@type": "Answer", "text": "In Rechenzentren innerhalb der EU. Wir schließen einen Auftragsverarbeitungsvertrag nach DSGVO mit Ihnen ab."}}
+    ]
   }
   </script>
 </head>
 <body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
   <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand" aria-label="VortexUnit — Startseite">
-        <img src="assets/img/logo.svg" width="34" height="34" alt="" />
+      <a href="#top" class="brand" aria-label="VortexUnit — zum Seitenanfang">
+        <img src="assets/img/logo.svg" width="30" height="30" alt="" />
         <span>Vortex<span class="u">Unit</span></span>
       </a>
       <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="leistungen.html">Leistungen</a>
-        <a href="produkte.html">Produkte</a>
-        <a href="ueber-uns.html">Über uns</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#vorteile">Warum wir</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
-        <a href="kontakt.html" class="btn btn-primary">Projekt anfragen</a>
-        <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+        <a href="#kontakt" class="btn btn-primary">Erstgespräch vereinbaren</a>
+        <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
       </div>
     </div>
   </header>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
-    <a href="leistungen.html">Leistungen</a>
-    <a href="produkte.html">Produkte</a>
-    <a href="ueber-uns.html">Über uns</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="kontakt.html" class="btn btn-primary btn-block">Projekt anfragen</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#vorteile">Warum wir</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt" class="btn btn-primary btn-block">Erstgespräch vereinbaren</a>
   </nav>
 
-  <main>
+  <main id="main">
     <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
-      <div class="grid-overlay" aria-hidden="true"></div>
-      <div class="container">
-        <div class="hero-inner">
-          <span class="badge-pill reveal"><span class="tag">Neu</span> <b>3 SaaS-Produkte</b> live &amp; in aktiver Entwicklung</span>
-          <h1 class="reveal d1">Software, die Daten in <span class="gradient-text">Ergebnisse</span> verwandelt.</h1>
-          <p class="lead reveal d2">VortexUnit ist Ihr Partner für <strong style="color:#fff">Dienstleistungen in der automatischen Datenverarbeitung</strong>. Wir entwickeln moderne SaaS-Produkte, individuelle Software und intelligente Datenlösungen – performant, sicher und DSGVO-konform.</p>
-          <div class="hero-cta reveal d3">
-            <a href="produkte.html" class="btn btn-primary btn-lg">Produkte entdecken
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a href="leistungen.html" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)">Unsere Leistungen</a>
-          </div>
-          <p class="hero-note reveal d3"><span class="dot"></span> Made in Germany · DSGVO-konform · Cloud-native</p>
-        </div>
-
-        <div class="stats">
-          <div class="stat reveal">
-            <div class="num gradient-text">3</div>
-            <div class="lbl">Live-SaaS-Produkte im Portfolio</div>
-          </div>
-          <div class="stat reveal d1">
-            <div class="num gradient-text">5</div>
-            <div class="lbl">Sprachen in unseren Apps unterstützt</div>
-          </div>
-          <div class="stat reveal d2">
-            <div class="num gradient-text">100 %</div>
-            <div class="lbl">DSGVO-konform &amp; datensparsam</div>
-          </div>
-          <div class="stat reveal d3">
-            <div class="num gradient-text">24/7</div>
-            <div class="lbl">Cloud-Verfügbarkeit &amp; Offline-Support</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- keyword marquee -->
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>SaaS-Entwicklung<span></span></span><span>Cloud &amp; PWA<span></span></span><span>Datenautomatisierung<span></span></span><span>KI-Integration<span></span></span><span>API-Entwicklung<span></span></span><span>UX &amp; Design<span></span></span><span>DSGVO by Design<span></span></span>
-          <span>SaaS-Entwicklung<span></span></span><span>Cloud &amp; PWA<span></span></span><span>Datenautomatisierung<span></span></span><span>KI-Integration<span></span></span><span>API-Entwicklung<span></span></span><span>UX &amp; Design<span></span></span><span>DSGVO by Design<span></span></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ LEISTUNGEN ============ -->
-    <section class="section" id="leistungen">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow reveal">Unsere Leistungen</span>
-          <h2 class="reveal d1">Alles für Ihre automatische Datenverarbeitung</h2>
-          <p class="reveal d2" style="margin-inline:auto">Von der ersten Idee bis zum skalierbaren Produkt – wir begleiten den kompletten digitalen Wertschöpfungsprozess unter einem Dach.</p>
-        </div>
-        <div class="grid cols-3">
-          <article class="card reveal">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-            <h3>Software­entwicklung</h3>
-            <p>Individuelle Web- und Mobile-Anwendungen – von der Architektur bis zum Deployment. Sauberer Code, moderne Frameworks, wartbar gebaut.</p>
-            <ul class="card-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Web-Apps, PWAs &amp; mobile Apps</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> React, TypeScript &amp; Node.js</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Skalierbare Cloud-Architektur</li>
-            </ul>
-          </article>
-          <article class="card reveal d1">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .9-8.9A6 6 0 0 0 6.6 9 4.5 4.5 0 0 0 7 18h10.5Z"/><path d="M12 12v6M9.5 14.5 12 12l2.5 2.5"/></svg></div>
-            <h3>SaaS-Produkte</h3>
-            <p>Wir bauen und betreiben eigene Software-as-a-Service-Produkte – von der Idee über das Design bis zum laufenden Abo-Betrieb mit Zahlungsabwicklung.</p>
-            <ul class="card-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Multi-Tenant &amp; Abo-Modelle</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Zahlungs­integration (Stripe)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Wartung, Updates &amp; Support</li>
-            </ul>
-          </article>
-          <article class="card reveal d2">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
-            <h3>Daten &amp; Automatisierung</h3>
-            <p>Automatische Datenverarbeitung im Kern: Daten erfassen, veredeln, synchronisieren und in Echtzeit nutzbar machen – zuverlässig und nachvollziehbar.</p>
-            <ul class="card-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Datenpipelines &amp; Synchronisation</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> KI-gestützte Auswertung</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Analytics &amp; Dashboards</li>
-            </ul>
-          </article>
-        </div>
-        <div class="reveal" style="text-align:center;margin-top:44px">
-          <a href="leistungen.html" class="btn btn-ghost btn-lg">Alle Leistungen im Detail
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PRODUKTE ============ -->
-    <section class="section" style="background:var(--bg-soft);border-block:1px solid var(--line)" id="produkte">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow reveal">Unser Portfolio</span>
-          <h2 class="reveal d1">Produkte, die wir selbst entwickeln</h2>
-          <p class="reveal d2" style="margin-inline:auto">Drei eigenständige SaaS-Produkte zeigen, wie wir arbeiten: durchdacht im Konzept, klar im Design, verlässlich im Betrieb.</p>
-        </div>
-
-        <!-- SmartCart -->
-        <div class="product reveal">
-          <div class="product-text">
-            <span class="product-tag" style="background:#ffe9e9;color:#d64545">🛒 SmartCart</span>
-            <h3>Intelligentes Einkaufen für die ganze Familie</h3>
-            <p class="lead">Smarte Einkaufslisten, KI-gestützte Rezepte und Ausgaben-Tracking – als schnelle, offline-fähige Progressive Web App in fünf Sprachen.</p>
-            <ul class="product-feats">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Listen nach Shop &amp; Kategorie</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sprach- &amp; Mehrsprachensuche</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> KI-Rezepte &amp; Familien-Sync</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Ausgaben-Tracking &amp; Offline-Modus</li>
-            </ul>
-            <a href="produkte.html#smartcart" class="btn btn-ghost">Mehr zu SmartCart</a>
-          </div>
-          <div class="product-media">
-            <div class="mock mock--shot" style="--brand:#ff6b6b">
-              <div class="mock-screen">
-                <img src="assets/img/products/smartcart-list.jpg" width="390" height="844" alt="SmartCart App-Screenshot: kategorisierte Einkaufsliste mit Familien-Sharing und Sprachsuche" loading="lazy" />
-              </div>
-              <p class="mock-caption">Echter App-Screenshot</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Everly -->
-        <div class="product reveal">
-          <div class="product-text">
-            <span class="product-tag" style="background:#eeecfb;color:#6b6fc9">🌱 Everly</span>
-            <h3>Eine App – von der ersten Ultraschall­aufnahme bis ins Familienleben</h3>
-            <p class="lead">Everly begleitet Familien lückenlos: Schwangerschaft, Wochenbett und der Alltag mit Kind – lokal-first, sicher und mit „Mum&amp;Me“ dauerhaft kostenlos.</p>
-            <ul class="product-feats">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 7 Module, 69 durchdachte Screens</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Health-Hub &amp; Routinen</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Co-Parenting &amp; Timeline</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sicherheits­funktionen nie kostenpflichtig</li>
-            </ul>
-            <a href="produkte.html#everly" class="btn btn-ghost">Mehr zu Everly</a>
-          </div>
-          <div class="product-media">
-            <div class="mock mock--shot" style="--brand:#6b6fc9;background:linear-gradient(160deg,#26264a,#171730)">
-              <div class="mock-screen">
-                <img src="assets/img/products/everly-today.png" width="860" height="1154" alt="Everly App-Screenshot: Today-Startbildschirm mit Kinderauswahl und What's-Next-Feed" loading="lazy" />
-              </div>
-              <p class="mock-caption">Echter App-Screenshot</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ServiceMarket -->
-        <div class="product reveal">
-          <div class="product-text">
-            <span class="product-tag" style="background:#e4efee;color:#174f4d">📅 ServiceMarket</span>
-            <h3>Die Kommando­zentrale für Dienstleister</h3>
-            <p class="lead">Termine, Angebote und Aufträge an einem Ort. ServiceMarket bündelt Kalender, Tagesagenda und Auftrags-Pipeline in einem ruhigen, klaren Dashboard.</p>
-            <ul class="product-feats">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Kalender &amp; 7-Tage-Agenda</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> „Up Next“ – direkt zum nächsten Termin</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Auftrags-Status &amp; Angebote</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Verfügbarkeiten auf einen Blick</li>
-            </ul>
-            <a href="produkte.html#servicemarket" class="btn btn-ghost">Mehr zu ServiceMarket</a>
-          </div>
-          <div class="product-media">
-            <div class="mock" style="--brand:#174f4d">
-              <div class="mock-screen">
-                <div class="mock-bar"><i></i><i></i><i></i></div>
-                <div class="mock-body" style="background:#f7f5f0">
-                  <div class="m-block" style="height:52px;background:#174f4d;border:none;display:flex;flex-direction:column;justify-content:center;padding:0 14px;gap:6px"><div class="m-chip" style="height:8px;width:40%;background:rgba(255,255,255,.35);border:none"></div><div class="m-chip" style="height:10px;width:65%;background:rgba(255,255,255,.85);border:none"></div></div>
-                  <div class="m-row" style="gap:8px">
-                    <div class="m-block" style="flex:1;height:22px;background:#fff;border:1px solid #e5e3db"></div>
-                    <div class="m-block" style="flex:1;height:22px;background:#e4efee;border:1px solid #cfe0de"></div>
-                    <div class="m-block" style="flex:1;height:22px;background:#fff;border:1px solid #e5e3db"></div>
-                  </div>
-                  <div class="m-block" style="height:40px;background:#fff;border:1px solid #e5e3db;display:flex;align-items:center;padding:0 12px;gap:10px"><span class="m-pill" style="background:#174f4d;color:#fff;font-size:9px">Gebucht</span><div class="m-chip" style="height:8px;background:#efece5;border:none"></div></div>
-                  <div class="m-block" style="height:40px;background:#fff;border:1px solid #e5e3db;display:flex;align-items:center;padding:0 12px;gap:10px"><span class="m-pill" style="background:#d99748;color:#fff;font-size:9px">Läuft</span><div class="m-chip" style="height:8px;background:#efece5;border:none"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal" style="text-align:center;margin-top:20px">
-          <a href="produkte.html" class="btn btn-primary btn-lg">Alle Produkte ansehen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WARUM VORTEXUNIT ============ -->
-    <section class="section">
-      <div class="container split">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
         <div>
-          <span class="eyebrow reveal">Warum VortexUnit</span>
-          <h2 class="reveal d1" style="margin-top:14px">Ein Partner für den kompletten digitalen Lebenszyklus</h2>
-          <p class="reveal d2" style="margin-top:16px">Wir sind keine reine Agentur und kein reines Startup – wir sind beides. Wir bauen unsere eigenen Produkte und bringen genau diese Erfahrung in Ihre Projekte ein.</p>
-          <div class="reveal d2" style="margin-top:28px"><a href="ueber-uns.html" class="btn btn-ghost">Mehr über uns</a></div>
+          <span class="eyebrow">Software · SaaS · Datenautomatisierung</span>
+          <h1>Software, die Ihre Daten <span class="hl">für Sie arbeiten</span> lässt.</h1>
+          <p class="lead">Wir entwickeln individuelle Web-Apps, SaaS-Plattformen und Automatisierungen für Unternehmen – von der ersten Idee bis zum sicheren Betrieb. Ein Team, ein Ansprechpartner, klare Preise.</p>
+          <div class="hero-cta">
+            <a href="#kontakt" class="btn btn-primary btn-lg">Kostenloses Erstgespräch
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#leistungen" class="btn btn-ghost btn-lg">Leistungen ansehen</a>
+          </div>
+          <ul class="assure">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Antwort innerhalb eines Werktags</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Unverbindliches Angebot</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>DSGVO-konform, Hosting in der EU</li>
+          </ul>
         </div>
-        <div class="val-list">
-          <div class="val-item reveal">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-            <div><h4>DSGVO &amp; „Privacy by Design“</h4><p>Datenschutz ist bei uns kein Nachgedanke. Datensparsamkeit, Verschlüsselung und lokale Verarbeitung sind von Anfang an eingebaut.</p></div>
-          </div>
-          <div class="val-item reveal d1">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
-            <div><h4>Moderne Technologie</h4><p>React, TypeScript, Cloud-native Architektur und KI-Integration – wir setzen auf Werkzeuge, die auch morgen noch tragen.</p></div>
-          </div>
-          <div class="val-item reveal d2">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
-            <div><h4>Design, das begeistert</h4><p>Wir denken Produkt und Design zusammen. Jedes Detail – von der Typografie bis zur Micro-Animation – ist bewusst gestaltet.</p></div>
-          </div>
-          <div class="val-item reveal d3">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 3a4 4 0 0 1 0 8M7 13a4 4 0 0 0 0 8"/></svg></div>
-            <div><h4>Verlässlicher Betrieb</h4><p>Wir liefern nicht nur ab, wir betreiben. Wartung, Monitoring, Updates und Support gehören für uns zum Produkt dazu.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ PROZESS ============ -->
-    <section class="section" style="background:var(--bg-soft);border-block:1px solid var(--line)">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow reveal">So arbeiten wir</span>
-          <h2 class="reveal d1">Von der Idee zum laufenden Produkt</h2>
-          <p class="reveal d2" style="margin-inline:auto">Ein klarer, transparenter Prozess – Sie wissen jederzeit, woran wir arbeiten und warum.</p>
-        </div>
-        <div class="grid cols-4">
-          <div class="step reveal"><span class="n"></span><h3>Verstehen</h3><p>Wir analysieren Ziel, Nutzer und Daten – und definieren gemeinsam, was Erfolg bedeutet.</p></div>
-          <div class="step reveal d1"><span class="n"></span><h3>Gestalten</h3><p>Konzept, UX und Design entstehen als klickbarer Prototyp, bevor eine Zeile Code fällt.</p></div>
-          <div class="step reveal d2"><span class="n"></span><h3>Entwickeln</h3><p>In kurzen Iterationen bauen wir das Produkt – testbar, sicher und sauber dokumentiert.</p></div>
-          <div class="step reveal d3"><span class="n"></span><h3>Betreiben</h3><p>Launch, Monitoring und kontinuierliche Weiterentwicklung – Ihr Produkt bleibt aktuell.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA BAND ============ -->
-    <section class="section">
-      <div class="container">
-        <div class="band reveal">
-          <div class="aurora" aria-hidden="true"><span class="a1" style="opacity:.35"></span><span class="a2" style="opacity:.35"></span></div>
-          <div style="position:relative;z-index:2;max-width:640px;margin-inline:auto">
-            <h2>Haben Sie eine Idee, die Daten liebt?</h2>
-            <p>Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns mit einer ehrlichen Einschätzung – unverbindlich und kostenfrei.</p>
-            <div class="hero-cta">
-              <a href="kontakt.html" class="btn btn-primary btn-lg">Projekt anfragen</a>
-              <a href="produkte.html" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)">Produkte ansehen</a>
+        <div class="board" aria-label="Beispiel einer automatisierten Rechnungsverarbeitung">
+          <div class="panel float float-b">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <span><b>2 Rechnungen zur Freigabe</b><small>Abweichung vom Bestellwert</small></span>
+          </div>
+          <div class="panel flow">
+            <div class="flow-h">
+              <span><b>Rechnungseingang</b><small>Automatisiert · täglich 06:00</small></span>
+              <span class="live">Läuft</span>
             </div>
+            <ol class="steps">
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span><b>Postfach auslesen</b><small>37 neue PDF-Rechnungen</small></span><span class="state done">Fertig</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><span><b>Daten erkennen</b><small>Betrag, Datum, Lieferant, USt.</small></span><span class="state done">Fertig</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><span><b>Abgleich mit Bestellungen</b><small>35 von 37 passen</small><span class="progress" aria-hidden="true"><i></i></span></span><span class="state run">Läuft</span></li>
+              <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></span><span><b>Übergabe an Buchhaltung</b><small>DATEV-Export</small></span><span class="state wait">Wartet</span></li>
+            </ol>
           </div>
+          <div class="panel float float-a">
+            <b>Manuelle Schritte pro Woche</b>
+            <small>vorher → nachher</small>
+            <div class="bars" aria-hidden="true"><i style="height:100%"></i><i style="height:86%"></i><i style="height:64%"></i><i style="height:40%"></i><i style="height:22%"></i></div>
+          </div>
+          <span class="board-note">Beispielhafte Darstellung</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section-tight" aria-label="Technologien">
+      <div class="container stack">
+        <p class="stack-label">Moderne, bewährte Technologien – keine Abhängigkeit von Exoten</p>
+        <span>TypeScript</span><span>React</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>REST &amp; GraphQL</span><span>KI-Sprachmodelle</span><span>EU-Cloud</span>
+      </div>
+    </section>
+
+    <!-- ============ PAINS ============ -->
+    <section class="section alt" aria-labelledby="pains-h">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Kommt Ihnen das bekannt vor?</span>
+          <h2 id="pains-h">Ihr Team verdient bessere Werkzeuge als Excel und Copy-Paste.</h2>
+        </div>
+        <div class="pains">
+          <article class="pain reveal">
+            <p class="q">„Wir übertragen jeden Tag dieselben Daten von einem System ins nächste.“</p>
+            <p class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Wir verbinden Ihre Systeme über Schnittstellen. Die Daten fließen automatisch und geprüft.</p>
+          </article>
+          <article class="pain reveal d1">
+            <p class="q">„Unsere wichtigsten Abläufe hängen an einer Tabelle, die nur eine Person versteht.“</p>
+            <p class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Wir machen daraus eine Web-App mit Rechten, Verlauf und Datensicherung, die das ganze Team bedienen kann.</p>
+          </article>
+          <article class="pain reveal d2">
+            <p class="q">„Wir haben eine Produktidee, aber niemanden, der sie sauber baut und betreibt.“</p>
+            <p class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Wir entwickeln Ihr SaaS-Produkt inklusive Login, Abrechnung und Betrieb, und bleiben danach an Bord.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="leistungen" aria-labelledby="svc-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Leistungen</span>
+          <h2 id="svc-h">Alles, was Ihre Software braucht. Aus einer Hand.</h2>
+          <p class="lead">Von der Konzeption über die Entwicklung bis zum laufenden Betrieb. Sie brauchen keine fünf Dienstleister, sondern einen Partner, der das Ganze verantwortet.</p>
+        </div>
+        <div class="bento">
+          <article class="tile w3 feature reveal">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></span>
+            <h3>Datenverarbeitung &amp; Automatisierung</h3>
+            <p>Import, Prüfung, Bereinigung und Weitergabe Ihrer Daten, automatisch und nachvollziehbar. Wiederkehrende Aufgaben laufen ohne Ihr Zutun.</p>
+            <ul><li>Schnittstellen &amp; APIs</li><li>ETL-Prozesse</li><li>Reporting</li><li>Dokumenten-Erkennung</li></ul>
+          </article>
+          <article class="tile w3 reveal d1">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+            <h3>Individuelle Software &amp; Web-Apps</h3>
+            <p>Kundenportale, interne Tools und Fachanwendungen, genau zugeschnitten auf Ihre Prozesse statt umgekehrt.</p>
+            <ul><li>Web &amp; Mobile</li><li>Kundenportale</li><li>Interne Tools</li></ul>
+          </article>
+          <article class="tile reveal">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
+            <h3>SaaS-Entwicklung</h3>
+            <p>Mandantenfähige Plattformen mit Login, Rollen, Abo-Abrechnung und Admin-Bereich.</p>
+          </article>
+          <article class="tile reveal d1">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
+            <h3>KI-Integration</h3>
+            <p>Sprachmodelle dort, wo sie Zeit sparen: Texte auslesen, klassifizieren, zusammenfassen. Datenschutzkonform eingebunden.</p>
+          </article>
+          <article class="tile reveal d2">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H8a6 6 0 1 1 5.7-7.9A4.5 4.5 0 1 1 17.5 19z"/></svg></span>
+            <h3>Cloud &amp; Betrieb</h3>
+            <p>Hosting in der EU, Monitoring, Backups und Updates. Ihre Anwendung läuft, und wir sehen Probleme vor Ihnen.</p>
+          </article>
+          <article class="tile w3 reveal">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 4-4 4h-2.5a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></span>
+            <h3>Produkt- &amp; UX-Design</h3>
+            <p>Klickbare Prototypen, bevor eine Zeile Code entsteht. So sehen Sie früh, was Sie bekommen, und Ihre Nutzer verstehen es ohne Schulung.</p>
+          </article>
+          <article class="tile w3 reveal d1">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.9 4.9 4.3 4.3M14.8 14.8l4.3 4.3M14.8 9.2l4.3-4.3M4.9 19.1l4.3-4.3"/></svg></span>
+            <h3>Wartung &amp; Weiterentwicklung</h3>
+            <p>Bestehende Software übernehmen, modernisieren und weiterentwickeln. Auch wenn der ursprüngliche Entwickler nicht mehr erreichbar ist.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section alt" id="ablauf" aria-labelledby="proc-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Ablauf</span>
+          <h2 id="proc-h">In vier Schritten von der Idee zur laufenden Lösung.</h2>
+          <p class="lead">Sie wissen jederzeit, woran wir arbeiten, was es kostet und wann es fertig ist.</p>
+        </div>
+        <ol class="process">
+          <li class="p-step reveal"><span class="n">1</span><h3>Erstgespräch</h3><p>Wir hören zu, verstehen Ihr Ziel und sagen ehrlich, ob und wie wir helfen können.</p><span class="t">30 Min. · kostenlos</span></li>
+          <li class="p-step reveal d1"><span class="n">2</span><h3>Konzept &amp; Angebot</h3><p>Sie erhalten Umfang, Zeitplan und Preis schriftlich. Bei Bedarf mit klickbarem Prototyp.</p><span class="t">Festpreis oder Budgetrahmen</span></li>
+          <li class="p-step reveal d2"><span class="n">3</span><h3>Entwicklung</h3><p>In kurzen Etappen mit regelmäßigen Demos. Sie testen früh und steuern mit.</p><span class="t">Demo alle 2 Wochen</span></li>
+          <li class="p-step reveal d3"><span class="n">4</span><h3>Launch &amp; Betrieb</h3><p>Wir bringen die Lösung live, schulen Ihr Team und kümmern uns um Betrieb und Updates.</p><span class="t">Support inklusive</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section" id="vorteile" aria-labelledby="why-h">
+      <div class="container why">
+        <div class="section-head reveal">
+          <span class="eyebrow">Warum VortexUnit</span>
+          <h2 id="why-h">Ein Partner, der Verantwortung übernimmt.</h2>
+          <p class="lead">Keine Agentur mit wechselnden Gesichtern und keine Blackbox. Sie arbeiten direkt mit den Menschen, die Ihre Software bauen.</p>
+          <div class="hero-cta"><a href="#kontakt" class="btn btn-primary">Projekt besprechen</a></div>
+        </div>
+        <div class="why-list">
+          <article class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg><h3>Klare Preise</h3><p>Festpreis oder fester Budgetrahmen. Keine Überraschungen auf der Rechnung.</p></article>
+          <article class="why-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><h3>Ein Ansprechpartner</h3><p>Von der ersten Idee bis zum Betrieb. Direkt erreichbar, ohne Ticket-Schleifen.</p></article>
+          <article class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><h3>DSGVO by default</h3><p>Hosting in der EU, Auftragsverarbeitungsvertrag, Datensparsamkeit von Anfang an.</p></article>
+          <article class="why-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg><h3>Ihr Code gehört Ihnen</h3><p>Quellcode, Zugänge und Dokumentation gehen an Sie. Kein Lock-in.</p></article>
+          <article class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><h3>Schnell nutzbar</h3><p>Erste Ergebnisse in Wochen, nicht Monaten. Wir liefern in Etappen statt alles am Ende.</p></article>
+          <article class="why-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><h3>Messbarer Nutzen</h3><p>Wir definieren vorab, was sich verbessern soll, und zeigen danach, ob es eingetreten ist.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXAMPLES ============ -->
+    <section class="section alt" aria-labelledby="ex-h">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Was wir für Sie bauen</span>
+          <h2 id="ex-h">Typische Projekte, die sich schnell bezahlt machen.</h2>
+        </div>
+        <div class="examples">
+          <article class="ex reveal">
+            <span class="tag">Verwaltung &amp; Finanzen</span>
+            <h3>Belege automatisch verarbeiten</h3>
+            <div class="ba"><div><b>Vorher</b>Rechnungen werden abgetippt und per E-Mail weitergeleitet.</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><b>Nachher</b>Daten werden erkannt, geprüft und an die Buchhaltung übergeben.</div></div>
+          </article>
+          <article class="ex reveal d1">
+            <span class="tag">Kundenservice</span>
+            <h3>Kundenportal statt E-Mail-Pingpong</h3>
+            <div class="ba"><div><b>Vorher</b>Status-Anfragen, Dokumente und Freigaben laufen über das Postfach.</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><b>Nachher</b>Kunden sehen Status, laden Dokumente hoch und geben selbst frei.</div></div>
+          </article>
+          <article class="ex reveal">
+            <span class="tag">Operations</span>
+            <h3>Interne App statt Excel-Listen</h3>
+            <div class="ba"><div><b>Vorher</b>Mehrere Versionen einer Tabelle, niemand weiß, welche aktuell ist.</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><b>Nachher</b>Eine Web-App mit Rechten, Verlauf und Auswertungen auf Knopfdruck.</div></div>
+          </article>
+          <article class="ex reveal d1">
+            <span class="tag">Vertrieb &amp; Management</span>
+            <h3>Reporting, das sich selbst erstellt</h3>
+            <div class="ba"><div><b>Vorher</b>Zahlen aus drei Systemen werden monatlich zusammenkopiert.</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><b>Nachher</b>Ein Dashboard mit tagesaktuellen Kennzahlen, automatisch befüllt.</div></div>
+          </article>
+        </div>
+        <p class="examples-note">Ihr Fall ist nicht dabei? Das ist die Regel, nicht die Ausnahme. <a href="#kontakt">Erzählen Sie uns davon.</a></p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Häufige Fragen</span>
+          <h2 id="faq-h">Gut zu wissen, bevor wir sprechen.</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal" open><summary>Was kostet ein Projekt?</summary><p>Das hängt vom Umfang ab. Nach dem Erstgespräch erhalten Sie ein schriftliches Angebot mit klarem Leistungsumfang und Festpreis oder Budgetrahmen, bevor Kosten entstehen. Das Erstgespräch selbst ist kostenlos und unverbindlich.</p></details>
+          <details class="reveal"><summary>Wie lange dauert die Umsetzung?</summary><p>Ein klar umrissenes Automatisierungsprojekt ist oft in wenigen Wochen produktiv. Größere Plattformen planen wir in Etappen, mit einer ersten nutzbaren Version nach etwa sechs bis zwölf Wochen.</p></details>
+          <details class="reveal"><summary>Arbeiten Sie auch mit kleinen Unternehmen?</summary><p>Ja. Viele der wirkungsvollsten Projekte sind klein: eine Schnittstelle, ein Formular, ein automatischer Bericht. Wir sagen Ihnen offen, was sich lohnt und was nicht.</p></details>
+          <details class="reveal"><summary>Wem gehört der Quellcode?</summary><p>Ihnen. Nach vollständiger Bezahlung erhalten Sie den Quellcode, alle Zugänge und die Dokumentation. Sie sind nicht an uns gebunden.</p></details>
+          <details class="reveal"><summary>Wo werden unsere Daten gespeichert?</summary><p>In Rechenzentren innerhalb der EU. Wir schließen einen Auftragsverarbeitungsvertrag nach DSGVO mit Ihnen ab und verarbeiten nur die Daten, die wirklich nötig sind.</p></details>
+          <details class="reveal"><summary>Was passiert nach dem Launch?</summary><p>Wir bleiben an Bord: Betrieb, Monitoring, Updates und Weiterentwicklung, auf Wunsch mit festem monatlichem Wartungsvertrag.</p></details>
+          <details class="reveal"><summary>Können Sie bestehende Software übernehmen?</summary><p>Ja. Wir analysieren den bestehenden Code, sagen Ihnen ehrlich, in welchem Zustand er ist, und schlagen vor, ob Weiterentwicklung oder Neuaufbau sinnvoller ist.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="kontakt" aria-labelledby="ct-h" style="padding-top:0">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <span class="eyebrow">Kontakt</span>
+            <h2 id="ct-h">Lassen Sie uns über Ihr Projekt sprechen.</h2>
+            <p class="lead">Erzählen Sie uns kurz, worum es geht. Wir melden uns innerhalb eines Werktags mit einem Terminvorschlag.</p>
+            <ol class="contact-points">
+              <li><span class="n">1</span><span><b>Sie schreiben uns</b>Ein paar Sätze reichen. Es muss noch nichts fertig durchdacht sein.</span></li>
+              <li><span class="n">2</span><span><b>Wir sprechen 30 Minuten</b>Kostenlos, per Video oder Telefon.</span></li>
+              <li><span class="n">3</span><span><b>Sie erhalten ein Angebot</b>Schriftlich, mit Umfang, Zeitplan und Preis.</span></li>
+            </ol>
+            <p class="direct">Lieber direkt? <a href="mailto:info@vortexunit.de">info@vortexunit.de</a></p>
+          </div>
+
+          <form class="form" data-contact-form data-mailto="info@vortexunit.de" novalidate>
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
+            <div class="field"><label for="f-email">E-Mail</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field full"><label for="f-company">Unternehmen <span>(optional)</span></label><input id="f-company" name="company" type="text" autocomplete="organization" /></div>
+            <fieldset class="field full">
+              <legend>Worum geht es?</legend>
+              <div class="chips">
+                <label><input type="radio" name="topic" value="Automatisierung" checked /><span>Automatisierung</span></label>
+                <label><input type="radio" name="topic" value="Web-App / Software" /><span>Web-App / Software</span></label>
+                <label><input type="radio" name="topic" value="SaaS-Produkt" /><span>SaaS-Produkt</span></label>
+                <label><input type="radio" name="topic" value="KI-Integration" /><span>KI-Integration</span></label>
+                <label><input type="radio" name="topic" value="Etwas anderes" /><span>Etwas anderes</span></label>
+              </div>
+            </fieldset>
+            <div class="field full"><label for="f-budget">Budgetrahmen <span>(optional)</span></label>
+              <select id="f-budget" name="budget">
+                <option value="">Noch offen</option>
+                <option>unter 10.000 €</option>
+                <option>10.000 – 25.000 €</option>
+                <option>25.000 – 50.000 €</option>
+                <option>über 50.000 €</option>
+              </select>
+            </div>
+            <div class="field full"><label for="f-msg">Ihre Nachricht</label><textarea id="f-msg" name="message" placeholder="Was soll besser werden? Welche Systeme sind beteiligt?" required></textarea></div>
+            <div class="full form-foot">
+              <button type="submit" class="btn btn-primary btn-lg">Anfrage senden</button>
+              <small>Öffnet Ihr E-Mail-Programm mit der vorbereiteten Nachricht. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</small>
+            </div>
+            <p class="form-status full" data-form-status role="status"></p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
+  <footer class="site-footer" style="margin-top:0">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="brand"><img src="assets/img/logo.svg" width="34" height="34" alt="" /> <span style="color:#fff">Vortex<span class="u">Unit</span></span></a>
-          <p>Dienstleistungen in der automatischen Datenverarbeitung. Moderne SaaS-Produkte, Software und Datenlösungen – Made in Germany.</p>
-          <div class="footer-social">
-            <a href="mailto:info@vortexunit.de" aria-label="E-Mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
-            <a href="https://github.com/dzakmak92" aria-label="GitHub" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a>
-            <a href="https://www.linkedin.com" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
-          </div>
+          <a href="#top" class="brand"><img src="assets/img/logo.svg" width="30" height="30" alt="" /> <span>Vortex<span class="u">Unit</span></span></a>
+          <p>Individuelle Software, SaaS und Datenautomatisierung für Unternehmen. DSGVO-konform, Hosting in der EU.</p>
         </div>
-        <div class="footer-col">
-          <h4>Unternehmen</h4>
-          <ul>
-            <li><a href="ueber-uns.html">Über uns</a></li>
-            <li><a href="leistungen.html">Leistungen</a></li>
-            <li><a href="produkte.html">Produkte</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Produkte</h4>
-          <ul>
-            <li><a href="produkte.html#smartcart">SmartCart</a></li>
-            <li><a href="produkte.html#everly">Everly</a></li>
-            <li><a href="produkte.html#servicemarket">ServiceMarket</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Seite</h4><ul><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+        <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <p>© <span data-year>2026</span> VortexUnit. Alle Rechte vorbehalten.</p>
-        <div class="legal-links">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-          <a href="agb.html">AGB</a>
-        </div>
+        <p><a href="mailto:info@vortexunit.de" style="color:inherit">info@vortexunit.de</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- Privacy notice -->
-  <div class="cookie" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis">
-    <p>Diese Website kommt <strong style="color:#fff">ohne Tracking, ohne Werbe-Cookies und ohne externe Dienste</strong> aus. Es werden nur technisch notwendige Daten verarbeitet. Details in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-    <div class="row">
-      <button class="btn btn-primary" data-cookie-ack>Verstanden</button>
-      <a href="datenschutz.html" class="btn btn-ghost" style="background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)">Mehr erfahren</a>
-    </div>
-  </div>
-
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

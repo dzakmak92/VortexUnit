@@ -1,11 +1,11 @@
 {
   "name": "VortexUnit",
   "short_name": "VortexUnit",
-  "description": "Dienstleistungen in der automatischen Datenverarbeitung – SaaS, Software & Datenlösungen.",
+  "description": "Individuelle Software, SaaS und Datenautomatisierung für Unternehmen.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b0b14",
-  "theme_color": "#0b0b14",
+  "background_color": "#FBFBFD",
+  "theme_color": "#FBFBFD",
   "lang": "de",
   "icons": [
     { "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }

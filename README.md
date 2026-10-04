@@ -13,31 +13,35 @@ default**.
 ## 📁 Struktur
 
 ```
-index.html            Startseite (Hero, Leistungen, Produkt-Showcase, Prozess, CTA)
-leistungen.html       Leistungen im Detail (Software, SaaS, Daten, Cloud, KI, UX)
-produkte.html         Produkte im Detail: SmartCart · Everly · ServiceMarket
-ueber-uns.html        Über uns / Mission / Werte
-kontakt.html          Kontaktseite mit Formular (mailto, kein Backend nötig)
+index.html            Landingpage (Hero, Leistungen, Ablauf, Vorteile, Beispiele, FAQ, Kontaktformular)
 impressum.html        Impressum (§ 5 DDG)
 datenschutz.html      Datenschutzerklärung (DSGVO)
 agb.html              Allgemeine Geschäftsbedingungen
 404.html              Fehlerseite
+leistungen.html · ueber-uns.html · kontakt.html · produkte.html
+                      Nur noch Weiterleitungen auf die passenden Abschnitte der Startseite
+                      (damit alte Links nicht ins Leere laufen; noindex)
 assets/
-  css/style.css       Komplettes Design-System (Dark-Hero + helle Sektionen)
-  js/main.js          Navigation, Scroll-Animationen, Cookie-Hinweis, Formular
-  img/                Logo, Favicon, OG-Cover (alles als SVG)
+  css/style.css       Design-System „Ruhe“ (hell, ein Violett-Akzent, sanfte Farbwolke)
+  js/main.js          Navigation, Abschnitts-Markierung, Scroll-Reveal, Formular
+  fonts/              Hanken Grotesk 400–800 (selbst gehostet, SIL OFL – siehe OFL.txt)
+  img/                Logo, Favicon (SVG), Social-Vorschaubild og-cover.png (1200×630)
 robots.txt · sitemap.xml · site.webmanifest
 ```
 
 ## 🎨 Design
 
-- **Marke:** Vortex (Wirbel/Energie) + Unit (Struktur). Logo = drei verwirbelte
-  Klingen mit Verlauf Violett → Purpur → Cyan.
-- **Look:** dunkler „Premium-SaaS“-Hero (Aurora-Gradient, Grid, Glow) kombiniert mit
-  hellen, gut lesbaren Inhaltssektionen. Glas-Karten, sanfte Scroll-Reveals.
-- **Schrift:** System-Font-Stack (kein externer Font-Request → kein Google-Fonts-
-  DSGVO-Problem). Optional später selbst gehostete Schrift möglich (siehe unten).
-- **Sprache:** Deutsch (Zielmarkt & rechtliche Anforderungen).
+- **Richtung „Ruhe“:** heller, ruhiger Auftritt für B2B-Kunden – Off-White, Tinte, ein
+  Violett-Akzent (#6B4FE8). Die Logo-Farben Violett/Cyan erscheinen nur als weiche
+  Farbwolke hinter dem Hero und dem Seitenkopf.
+- **Schrift:** Hanken Grotesk, **selbst gehostet** unter `assets/fonts/` – kein Request an
+  Google, also DSGVO-unbedenklich.
+- **Aufbau der Landingpage (auf Conversion ausgelegt):** Hero mit Nutzenversprechen und
+  zwei CTAs → Vertrauenspunkte → Technologien → typische Probleme → Leistungen (Bento-Raster)
+  → Ablauf in 4 Schritten → Vorteile → Beispielprojekte (vorher/nachher) → FAQ → Kontakt.
+  Jeder Abschnitt führt zum Erstgespräch.
+- **Keine eigenen Produkte auf der Seite** – bewusst reine Dienstleistungs-Landingpage.
+- **Sprache:** Deutsch, Sie-Form.
 
 ## ✅ VOR DEM LIVE-GANG AUSFÜLLEN (wichtig!)
 
@@ -71,11 +75,11 @@ Impressum ist in Deutschland gesetzlich vorgeschrieben.
 
 ## 📬 Kontaktformular
 
-Das Formular auf `kontakt.html` sendet **keine Daten an einen Server**. Beim Absenden
+Das Formular im Abschnitt **Kontakt** der Startseite sendet **keine Daten an einen Server**. Beim Absenden
 öffnet es das E-Mail-Programm der Besucher:innen mit vorbereiteter Nachricht an
 `info@vortexunit.de`. Vorteile: kein Backend, kein weiterer Datenverarbeiter.
 
-E-Mail-Adresse ändern: Attribut `data-mailto` im `<form>` in `kontakt.html` sowie die
+E-Mail-Adresse ändern: Attribut `data-mailto` im `<form>` in `index.html` sowie die
 `info@vortexunit.de`-Verweise anpassen. **Empfehlung:** eine Postfach-Adresse
 `info@vortexunit.de` einrichten (statt einer privaten Adresse).
 
@@ -95,34 +99,3 @@ Reine statische Dateien — überall lauffähig. Optionen:
 
 Danach unter `vortexunit.de` erreichbar. Alle absoluten URLs in `sitemap.xml`,
 `robots.txt` und den `og:`/`canonical`-Tags zeigen bereits auf `https://vortexunit.de`.
-
-## 🔤 Optional: Schrift selbst hosten
-
-Möchten Sie z. B. „Space Grotesk“/„Inter“ verwenden, laden Sie die `woff2`-Dateien
-herunter, legen Sie sie unter `assets/fonts/` ab, definieren Sie `@font-face` in
-`style.css` und passen Sie die `--`Font-Variablen an. **Nicht** von Google-Servern
-laden — sonst entsteht ein DSGVO-Thema. Selbst gehostet bleibt alles konform.
-
-## 🧩 Produkte
-
-Die dargestellten Produkte stammen aus den zugehörigen Repositories:
-
-| Produkt | Kurzbeschreibung |
-|---|---|
-| **SmartCart** | Smarte Einkaufs-PWA: Listen, Mehrsprach-/Sprachsuche, KI-Rezepte, Familien-Sync, Ausgaben-Tracking. |
-| **Everly** | Familien-App von Schwangerschaft bis Familienalltag; 7 Module, „Mum&Me“ dauerhaft kostenlos, local-first. |
-| **ServiceMarket** | „Control-Room“-Dashboard für Dienstleister: Kalender, Agenda, „Up Next“, Auftrags-Pipeline. |
-
-**SmartCart** und **Everly** werden mit **echten App-Screenshots** dargestellt
-(`assets/img/products/`, lokal eingebunden → keine externen Requests). Die
-Screenshots stammen aus den jeweiligen Produkt-Repos.
-
-Für **ServiceMarket** liegt (noch) kein fertiger Screenshot im Repo vor; hier wird
-eine schlanke, in den Markenfarben (Pine Teal) gestaltete CSS-Nachbildung des
-Dashboards gezeigt. Sobald ein echter Screenshot vorliegt, kann er analog unter
-`assets/img/products/` abgelegt und die `.mock`-Kachel in `index.html`/`produkte.html`
-ersetzt werden.
-
----
-
-© VortexUnit — Alle Rechte vorbehalten.
