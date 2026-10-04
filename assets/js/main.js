@@ -1,6 +1,9 @@
 /* VortexUnit — front-end interactions. No third-party scripts. */
 (function () {
   "use strict";
+  /* Always open at the top (the hero), unless a link points to a section */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) window.scrollTo(0, 0);
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hasIO = "IntersectionObserver" in window;
 
@@ -177,30 +180,22 @@
     layout();
   }
 
-  /* ---- Chaos → clarity: picture settles, the arrow draws, checks tick one by one ---- */
-  whenVisible(document.querySelector("[data-observe]"), function (el) {
-    el.classList.add("in");
-    el.querySelectorAll("[data-checks] li").forEach(function (li, i) { setTimeout(function () { li.classList.add("on"); }, reduceMotion ? 0 : 600 + i * 450); });
-  }, 0.35);
-
-  /* ---- Milestones: orbs light up in order and count up to 1K, 10K, 100K ---- */
+  /* ---- Milestone counters count up to 1K, 10K, 100K, one after another ---- */
   function fmt(v) { return v >= 1000 ? Math.round(v / 1000) + "K" : String(Math.round(v)); }
-  whenVisible(document.querySelector("[data-journey]"), function (el) {
-    el.classList.add("in");
-    el.querySelectorAll(".ms").forEach(function (ms, i) {
+  whenVisible(document.querySelector("[data-milestones]"), function (el) {
+    el.querySelectorAll("[data-count]").forEach(function (b, i) {
+      var target = +b.getAttribute("data-count");
+      if (reduceMotion) { b.textContent = fmt(target); return; }
       setTimeout(function () {
-        ms.classList.add("on");
-        var orb = ms.querySelector("[data-count]"), target = +orb.getAttribute("data-count");
-        if (reduceMotion) { orb.textContent = fmt(target); return; }
-        var t0 = performance.now(), dur = 1100;
+        var t0 = performance.now(), dur = 1000;
         (function step(t) {
           var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-          orb.textContent = fmt(target * e);
+          b.textContent = fmt(target * e);
           if (k < 1) requestAnimationFrame(step);
         })(t0);
-      }, reduceMotion ? 0 : 300 + i * 900);
+      }, i * 500);
     });
-  }, 0.35);
+  }, 0.6);
 
   /* ---- Business card: today's tasks complete themselves, then the day starts again ---- */
   var tasks = document.querySelectorAll("[data-tasks] li");
