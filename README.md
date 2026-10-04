@@ -22,27 +22,28 @@ leistungen.html · ueber-uns.html · kontakt.html · produkte.html
                       Nur noch Weiterleitungen auf die Startseite der Startseite
                       (damit alte Links nicht ins Leere laufen; noindex)
 assets/
-  css/style.css       Design-System „Ribbon“ (dunkel, Platin, ein Violett-Akzent)
+  css/style.css       Design-System „Pearl“ (hell, Glas, Violett)
   js/main.js          Navigation, Hero-Animation, Scroll-Reveal, Formular
   fonts/              Hanken Grotesk + Newsreader (selbst gehostet, SIL OFL)
-  img/                Logo (hell/dunkel), Favicon (SVG), Social-Vorschaubild og-cover.png
+  img/                Favicons/App-Icons (PNG), og-cover.png, hf/ = Higgsfield-Bilder & Film
 robots.txt · sitemap.xml · site.webmanifest
 ```
 
 ## 🎨 Design
 
-- **Logo:** ein einziges Band, oben eingerollt und in der Mitte einmal gefaltet, das ein V
-  bildet. `assets/img/logo.svg` (Platin, für dunkle Flächen), `logo-light.svg` (für helle
-  Flächen), `favicon.svg` (App-Icon auf Violett). Handgezeichnete Vektoren nach dem
-  Identity-Sheet.
-- **Wortmarke:** „VortexUnit“ in Newsreader (Serif); Claim „Software. Daten. Wachstum.“
-- **Look:** dunkles Tintenblau, Platin-Schrift, ein Violett-Akzent. Im Hero dreht sich ein
-  feines Möbius-Band (Canvas, pausiert außerhalb des Sichtfelds, statisch bei
-  „Bewegung reduzieren“).
-- **Aufbau:** bewusst wenig Text – Hero mit zwei Wegen (Unternehmen / Creator),
-  Leistungs-Ticker, je eine Karte pro Zielgruppe, ein Satz als Statement, drei Schritte,
-  Kontaktformular mit „Ich bin Unternehmen / Creator“.
-- **Schriften selbst gehostet** (Hanken Grotesk, Newsreader; SIL OFL) – kein Request an Google.
+- **Logo & Bildwelt aus Higgsfield:** Wortbildmarke (Band-V mit „VORTEXUNIT“ und
+  „Software. Data. Growth.“), Hero-Spirale, Glas-Icons, „Vom Chaos zur Klarheit“,
+  Meilenstein-Pfad und der Film (Band steigt durch Ringe zum V) wurden mit Higgsfield
+  erzeugt und liegen unter `assets/img/hf/` (WebP). Der Film ist in 5 Sprite-Sheets à
+  12 Bildern zerlegt und wird beim Scrollen abgespielt.
+- **Look „Pearl“:** helles Perl-Lavendel, Glas-Karten, Violett #6B4FE8, Serif-Headlines
+  (Newsreader) + Hanken Grotesk – nach dem Higgsfield-Seitenkonzept.
+- **Animationen:** aufsteigender Partikel-Wirbel im Hero, Scroll-Film „Ihr Weg nach
+  oben“, Chaos→Klarheit mit abhakender Checkliste, Meilensteine mit Zählern (1K/10K/100K),
+  sich selbst erledigende Aufgaben (Unternehmen), wachsende Einnahmenkurve mit
+  Benachrichtigungen (Creator), füllende Schrittlinie. Alles pausiert bzw. ist statisch bei
+  „Bewegung reduzieren“.
+- **Schriften selbst gehostet** (SIL OFL) – kein Request an Google oder Higgsfield.
 - **Sprache:** Deutsch, Sie-Form.
 
 ## ✅ VOR DEM LIVE-GANG AUSFÜLLEN (wichtig!)

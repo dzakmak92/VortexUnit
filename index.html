@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VortexUnit — Systeme, mit denen Unternehmen und Creator skalieren</title>
-  <meta name="description" content="VortexUnit baut Software, Automatisierung und Wachstums-Infrastruktur für Unternehmen und Creator. Weniger Handarbeit, planbares Wachstum. Jetzt Erstgespräch vereinbaren." />
-  <meta name="theme-color" content="#07080F" />
+  <meta name="description" content="VortexUnit baut Software und Automatisierung, die Ihr Tagesgeschäft leichter macht und passives Einkommen möglich macht – für Unternehmen und Creator. Jetzt Erstgespräch vereinbaren." />
+  <meta name="theme-color" content="#F7F4FD" />
   <link rel="canonical" href="https://vortexunit.de/" />
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="preload" href="assets/fonts/hanken-grotesk-600.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/newsreader-400-italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/img/hf/hero.webp" as="image" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VortexUnit" />
   <meta property="og:title" content="VortexUnit — Systeme, mit denen Sie skalieren" />
-  <meta property="og:description" content="Software, Automatisierung und Wachstums-Infrastruktur für Unternehmen und Creator." />
+  <meta property="og:description" content="Software und Automatisierung für Unternehmen und Creator. Software. Daten. Wachstum." />
   <meta property="og:url" content="https://vortexunit.de/" />
   <meta property="og:image" content="https://vortexunit.de/assets/img/og-cover.png" />
   <meta property="og:image:width" content="1200" />
@@ -28,9 +28,10 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "VortexUnit",
+    "slogan": "Software. Daten. Wachstum.",
     "url": "https://vortexunit.de",
-    "description": "Software, Automatisierung und Wachstums-Infrastruktur für Unternehmen und Creator.",
-    "logo": "https://vortexunit.de/assets/img/logo.svg",
+    "description": "Software und Automatisierung für Unternehmen und Creator.",
+    "logo": "https://vortexunit.de/assets/img/icon-512.png",
     "email": "info@vortexunit.de",
     "areaServed": ["DE", "AT", "CH"]
   }
@@ -42,131 +43,186 @@
   <header class="site-header">
     <div class="container nav">
       <a href="#top" class="brand" aria-label="VortexUnit — zum Seitenanfang">
-        <img src="assets/img/logo.svg" width="40" height="29" alt="" />
+        <img src="assets/img/hf/mark.webp" width="48" height="33" alt="" />
         <span>VortexUnit</span>
       </a>
       <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#weg">Ihr Weg</a>
         <a href="#unternehmen">Unternehmen</a>
         <a href="#creator">Creator</a>
         <a href="#ablauf">Ablauf</a>
       </nav>
       <div class="nav-cta">
-        <a href="#kontakt" class="btn btn-primary">Gespräch buchen</a>
+        <a href="#kontakt" class="btn btn-primary">Kontakt</a>
         <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
       </div>
     </div>
   </header>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="#weg">Ihr Weg</a>
     <a href="#unternehmen">Für Unternehmen</a>
     <a href="#creator">Für Creator</a>
     <a href="#ablauf">Ablauf</a>
-    <a href="#kontakt" class="btn btn-primary btn-block">Gespräch buchen</a>
+    <a href="#kontakt" class="btn btn-primary btn-block">Kontakt</a>
   </nav>
 
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <canvas id="ribbon" aria-hidden="true"></canvas>
-      <div class="container hero-inner">
-        <span class="label reveal">Software. Daten. Wachstum.</span>
-        <h1 class="reveal d1">Systeme, mit denen Sie <em class="s">skalieren.</em></h1>
-        <p class="sub reveal d2">Wir bauen die Software und Automatisierung hinter Ihrem Wachstum, für Unternehmen und für Creator.</p>
-        <div class="paths reveal d3">
-          <a href="#unternehmen" class="btn btn-primary btn-lg">Ich bin ein Unternehmen
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="#creator" class="btn btn-ghost btn-lg">Ich bin Creator
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <canvas class="swirl" id="swirl" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div>
+          <span class="label reveal">Automatisieren / Skalieren / Wachsen</span>
+          <h1 class="reveal d1">Systeme, mit denen Sie <em class="s">skalieren.</em></h1>
+          <p class="sub reveal d2">Wir bauen Software und Automatisierung, die Ihr Tagesgeschäft leichter macht und Einnahmen auch dann fließen lässt, wenn Sie gerade nicht arbeiten.</p>
+          <div class="paths reveal d3">
+            <a href="#unternehmen" class="btn btn-primary btn-lg">Für Unternehmen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#creator" class="btn btn-ghost btn-lg">Für Creator</a>
+          </div>
+          <ul class="trust reveal d3">
+            <li>Antwort in 24 Stunden</li>
+            <li>Festpreis-Angebot</li>
+            <li>DSGVO · EU-Hosting</li>
+          </ul>
         </div>
-        <ul class="trust reveal d3">
-          <li>Antwort in 24 Stunden</li>
-          <li>Festpreis-Angebot</li>
-          <li>DSGVO · EU-Hosting</li>
-        </ul>
+        <div class="spiral reveal d2" aria-hidden="true">
+          <img src="assets/img/hf/hero.webp" width="620" height="888" alt="" />
+          <span class="chip glass c1"><i>↻</i><span>Automatisiert<small>läuft jeden Tag</small></span></span>
+          <span class="chip glass c2"><i>↗</i><span>Wachstum<small>Schritt für Schritt</small></span></span>
+          <span class="chip glass c3"><i>€</i><span>Neue Einnahme<small>während Sie schlafen</small></span></span>
+        </div>
       </div>
-      <span class="scroll-cue" aria-hidden="true"></span>
     </section>
 
-    <!-- TICKER -->
-    <div class="ticker" aria-label="Was wir bauen">
-      <div class="ticker-track">
-        <span>Automatisierung</span><span>Web-Apps</span><span>SaaS-Plattformen</span><span>Daten &amp; Dashboards</span><span>KI-Integration</span><span>Creator-Plattformen</span><span>Memberships</span><span>Launch-Funnels</span>
-        <span aria-hidden="true">Automatisierung</span><span aria-hidden="true">Web-Apps</span><span aria-hidden="true">SaaS-Plattformen</span><span aria-hidden="true">Daten &amp; Dashboards</span><span aria-hidden="true">KI-Integration</span><span aria-hidden="true">Creator-Plattformen</span><span aria-hidden="true">Memberships</span><span aria-hidden="true">Launch-Funnels</span>
+    <!-- FILM: scroll to make the ribbon rise -->
+    <section class="film" id="weg" aria-label="Ihr Weg nach oben">
+      <div class="film-stick">
+        <div class="film-frame">
+          <canvas id="film" aria-hidden="true"></canvas>
+          <div class="film-copy">
+            <span class="label">Ihr Weg nach oben</span>
+            <div class="beats">
+              <div class="beat on"><h2>Jedes Wachstum beginnt <em class="s">am Boden.</em></h2><p>Ein Ziel, eine Idee, zu viele Aufgaben auf einmal.</p></div>
+              <div class="beat"><h2>Wir bringen <em class="s">Bewegung</em> hinein.</h2><p>Abläufe werden automatisiert, Daten fließen von selbst.</p></div>
+              <div class="beat"><h2>Ring für Ring <em class="s">nach oben.</em></h2><p>Jeder Meilenstein wird zur Basis für den nächsten.</p></div>
+              <div class="beat"><h2>Ihr System <em class="s">steht.</em></h2><p>Es arbeitet für Sie, Tag für Tag.</p></div>
+            </div>
+          </div>
+          <div class="film-progress" aria-hidden="true"><span class="on">Start</span><span>Bewegung</span><span>Meilensteine</span><span>System</span></div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- AUDIENCES -->
-    <section class="section">
+    <!-- CHAOS → CLARITY -->
+    <section class="section" aria-labelledby="tr-h">
       <div class="container">
         <div class="head reveal">
-          <span class="label">Zwei Wege, ein Partner</span>
-          <h2>Wachstum braucht <em class="s">Systeme</em>, nicht mehr Stunden.</h2>
+          <span class="label">Transformation</span>
+          <h2 id="tr-h">Vom Chaos <em class="s">zur Klarheit.</em></h2>
+          <p>Zettel, E-Mails, Tabellen und Handarbeit werden zu einem System, das einfach läuft.</p>
         </div>
-        <div class="duo">
-          <article class="aud reveal" id="unternehmen">
-            <span class="tag">Für Unternehmen</span>
-            <h3>Weniger Handarbeit. <em class="s">Mehr Marge.</em></h3>
-            <div class="viz" aria-hidden="true">
-              <svg viewBox="0 0 400 150" preserveAspectRatio="none" fill="none">
-                <path d="M20 110 C 120 110, 140 40, 200 40 S 300 100, 380 60" stroke="url(#gB)" stroke-width="2" stroke-dasharray="4 6"/>
-                <defs><linearGradient id="gB" x1="0" x2="1"><stop offset="0" stop-color="#7C63FF" stop-opacity=".2"/><stop offset="1" stop-color="#9B87FF"/></linearGradient></defs>
-              </svg>
-              <span class="chip" style="left:6%;top:58%">CRM</span>
-              <span class="chip" style="left:38%;top:14%"><i></i>Automatisch</span>
-              <span class="chip" style="right:6%;top:30%">Buchhaltung</span>
-            </div>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span><b>Prozesse automatisieren</b><small>Daten fließen zwischen Ihren Systemen, ohne Copy-Paste.</small></span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span><b>Software nach Maß</b><small>Portale, interne Tools und SaaS, gebaut für Ihre Abläufe.</small></span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg><span><b>Klarheit in Zahlen</b><small>Dashboards, die sich selbst aktualisieren.</small></span></li>
-            </ul>
-            <a href="#kontakt" class="btn btn-primary" data-audience="Unternehmen">Projekt besprechen
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </article>
-
-          <article class="aud creator reveal d1" id="creator">
-            <span class="tag">Für Creator</span>
-            <h3>Von Reichweite zu <em class="s">Umsatz.</em></h3>
-            <div class="viz" aria-hidden="true">
-              <svg viewBox="0 0 400 150" preserveAspectRatio="none" fill="none">
-                <defs><linearGradient id="gC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5FE3F5" stop-opacity=".35"/><stop offset="1" stop-color="#5FE3F5" stop-opacity="0"/></linearGradient></defs>
-                <path d="M0 130 C 80 126, 120 118, 170 100 S 260 60, 300 44 S 370 18, 400 12 L400 150 L0 150Z" fill="url(#gC)"/>
-                <path d="M0 130 C 80 126, 120 118, 170 100 S 260 60, 300 44 S 370 18, 400 12" stroke="#5FE3F5" stroke-width="2"/>
-              </svg>
-              <span class="chip" style="left:6%;top:16%"><i></i>Neues Mitglied</span>
-              <span class="chip" style="right:6%;top:58%">Launch läuft</span>
-            </div>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg><span><b>Ihre eigene Plattform</b><small>App, Membership oder Kursbereich unter Ihrer Marke.</small></span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg><span><b>Launches, die laufen</b><small>Funnels, E-Mails und Checkout, automatisch verbunden.</small></span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg><span><b>Community im Griff</b><small>Fans, Käufer und Daten an einem Ort statt in zehn Tools.</small></span></li>
-            </ul>
-            <a href="#kontakt" class="btn btn-ghost" data-audience="Creator">Wachstum planen
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </article>
+        <div class="transform reveal" data-observe>
+          <img class="bg" src="assets/img/hf/chaos.webp" width="1592" height="900" alt="Viele lose Dokumente und E-Mails verwandeln sich in ein klares, fließendes Band" loading="lazy" />
+          <span class="tag t1">Viele Tasks</span><span class="tag t2">Zeitverlust</span><span class="tag t3">E-Mails</span><span class="tag t4">Manuelle Arbeit</span><span class="tag t5">Chaos</span>
+          <span class="arrowtxt"><svg viewBox="0 0 70 16" fill="none" aria-hidden="true"><path d="M2 8h64M58 2l8 6-8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Klarheit</span>
+          <ul class="checks glass" data-checks>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Automatisiert</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Effizient</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Skalierbar</li>
+            <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Zukunftssicher</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- STATEMENT -->
-    <section class="section statement" aria-label="Unser Anspruch" style="padding-top:0">
+    <!-- MILESTONES -->
+    <section class="section" aria-labelledby="ms-h" style="padding-top:0">
       <div class="container">
-        <img class="mark reveal" src="assets/img/logo.svg" width="92" height="66" alt="" />
-        <p class="reveal d1">Einmal gebaut. <em class="s">Läuft</em> jeden Tag für Sie.</p>
+        <div class="head reveal">
+          <span class="label">Ihre Reise zum Wachstum</span>
+          <h2 id="ms-h">Wachsen. Schritt für Schritt. <em class="s">Gemeinsam.</em></h2>
+          <p>Vom ersten Kunden bis zum skalierbaren Geschäft. Wir bauen die Systeme für jede Etappe.</p>
+        </div>
+        <div class="journey reveal" data-journey>
+          <img class="bg" src="assets/img/hf/milestones.webp" width="1592" height="900" alt="Ein leuchtender Pfad, der sich über den Wolken nach oben windet, mit drei Meilensteinen" loading="lazy" />
+          <svg class="path" viewBox="0 0 1592 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M438 610 C 600 560, 760 390, 898 300 S 1150 150, 1242 88"/></svg>
+          <div class="ms m1"><span class="orb" data-count="1000">0</span><span class="cap glass">Erste Kunden<small>Validierung</small></span></div>
+          <div class="ms m2"><span class="orb" data-count="10000">0</span><span class="cap glass">Wachstum<small>Automatisierung</small></span></div>
+          <div class="ms m3"><span class="orb" data-count="100000">0</span><span class="cap glass">Skalierung<small>Freiheit</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIENCES -->
+    <section class="section" style="padding-top:0">
+      <div class="container duo">
+        <article class="aud glass reveal" id="unternehmen">
+          <img class="art" src="assets/img/hf/glass-business.webp" width="292" height="380" alt="" loading="lazy" />
+          <span class="label">Für Unternehmen</span>
+          <h3>Tagesgeschäft. <em class="s">Einfacher.</em></h3>
+          <p>Wiederkehrende Aufgaben laufen automatisch. Ihr Team gewinnt Zeit für das, was wirklich zählt.</p>
+          <div class="live" aria-label="Beispiel: automatisch erledigte Aufgaben">
+            <div class="live-h"><span>Heute automatisch erledigt</span><b>Live</b></div>
+            <ul class="tasks" data-tasks>
+              <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Rechnungen erstellt<em>06:00</em></li>
+              <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Termine bestätigt<em>08:15</em></li>
+              <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Daten abgeglichen<em>11:30</em></li>
+              <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i>Wochenreport versendet<em>17:00</em></li>
+            </ul>
+          </div>
+          <div class="feats">
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span>Prozesse automatisieren</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>Effiziente Workflows</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Sichere Systeme</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></span>Messbare Ergebnisse</div>
+          </div>
+          <a href="#kontakt" class="btn btn-primary" data-audience="Unternehmen">Projekt besprechen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="aud glass reveal d1" id="creator">
+          <img class="art" src="assets/img/hf/glass-growth.webp" width="277" height="380" alt="" loading="lazy" />
+          <span class="label">Für Creator</span>
+          <h3>Passives Einkommen. <em class="s">Möglich gemacht.</em></h3>
+          <p>Aus Reichweite wird ein System: eigene Plattform, Memberships und Launches, die ohne Ihr Zutun weiterlaufen.</p>
+          <div class="live" aria-label="Beispiel: Einnahmen wachsen über Zeit">
+            <div class="live-h"><span>Einnahmen · Beispiel</span><b>Läuft</b></div>
+            <div class="income" data-income>
+              <svg viewBox="0 0 400 118" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="incomeG" x1="0" x2="1"><stop offset="0" stop-color="#B9A9FF"/><stop offset="1" stop-color="#6B4FE8"/></linearGradient>
+                  <linearGradient id="incomeA" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8C76FF" stop-opacity=".3"/><stop offset="1" stop-color="#8C76FF" stop-opacity="0"/></linearGradient>
+                </defs>
+                <path class="area" d="M0 110 C 60 108, 100 100, 150 92 S 240 70, 280 52 S 360 18, 400 8 L400 118 L0 118Z"/>
+                <path class="line" d="M0 110 C 60 108, 100 100, 150 92 S 240 70, 280 52 S 360 18, 400 8"/>
+              </svg>
+              <span class="toast" style="top:0" data-toast>+ Neue Mitgliedschaft <b>€</b></span>
+            </div>
+          </div>
+          <div class="feats">
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></span>Memberships &amp; Community</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.1 2.1 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/></svg></span>Produkt-Launches</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></span>Eigene App &amp; Plattform</div>
+            <div class="feat"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></span>Einnahmen skalieren</div>
+          </div>
+          <a href="#kontakt" class="btn btn-ghost" data-audience="Creator">Wachstum planen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
       </div>
     </section>
 
     <!-- PROCESS -->
     <section class="section" id="ablauf" style="padding-top:0">
       <div class="container">
-        <div class="head reveal">
-          <span class="label">Ablauf</span>
-          <h2>Drei Schritte. <em class="s">Klare</em> Preise.</h2>
+        <div class="head center reveal">
+          <span class="label">In 3 einfachen Schritten</span>
+          <h2>So <em class="s">funktioniert's.</em></h2>
         </div>
-        <ol class="steps">
-          <li class="step reveal"><span class="n">01</span><h3>Gespräch</h3><p>30 Minuten, kostenlos. Wir verstehen Ihr Ziel und sagen ehrlich, was sich lohnt.</p><span class="t">Unverbindlich</span></li>
-          <li class="step reveal d1"><span class="n">02</span><h3>Plan &amp; Festpreis</h3><p>Umfang, Zeitplan und Preis schriftlich, bevor Kosten entstehen.</p><span class="t">Keine Überraschungen</span></li>
-          <li class="step reveal d2"><span class="n">03</span><h3>Bauen &amp; skalieren</h3><p>Erste Ergebnisse in Wochen. Danach Betrieb, Support und Weiterentwicklung.</p><span class="t">Ihr Code gehört Ihnen</span></li>
+        <ol class="steps" data-steps>
+          <li class="step reveal"><span class="n">1</span><h3>Strategie &amp; Analyse</h3><p>Wir verstehen Ihre Ziele, Prozesse und Potenziale. 30 Minuten, kostenlos.</p></li>
+          <li class="step reveal d1"><span class="n">2</span><h3>Systeme &amp; Umsetzung</h3><p>Festpreis, klarer Zeitplan. Dann bauen wir Ihre Lösung und automatisieren Ihre Abläufe.</p></li>
+          <li class="step reveal d2"><span class="n">3</span><h3>Skalierung &amp; Wachstum</h3><p>Sie wachsen, wir optimieren weiter. Ihr Code gehört Ihnen.</p></li>
         </ol>
       </div>
     </section>
@@ -176,10 +232,9 @@
       <div class="container">
         <div class="contact reveal">
           <div>
-            <span class="label">Kontakt</span>
-            <h2 style="margin-top:16px">Bereit für den nächsten <em class="s">Schritt?</em></h2>
-            <p class="lead">Ein paar Sätze reichen. Wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag.</p>
-            <p class="direct">Lieber direkt: <a href="mailto:info@vortexunit.de">info@vortexunit.de</a></p>
+            <h2>Bereit für den nächsten <em class="s">Schritt?</em></h2>
+            <p class="lead">Lassen Sie uns gemeinsam Ihre Vision in ein skalierbares System verwandeln. Wir melden uns innerhalb von 24 Stunden.</p>
+            <div class="brandline"><img src="assets/img/hf/mark-white.webp" width="56" height="38" alt="" />SOFTWARE. DATEN. WACHSTUM.</div>
           </div>
           <form class="form" data-contact-form data-mailto="info@vortexunit.de" novalidate>
             <fieldset class="field full">
@@ -191,10 +246,10 @@
             </fieldset>
             <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
             <div class="field"><label for="f-email">E-Mail</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
-            <div class="field full"><label for="f-msg">Worum geht es?</label><textarea id="f-msg" name="message" placeholder="Was soll wachsen oder schneller laufen?" required></textarea></div>
+            <div class="field full"><label for="f-msg">Wie können wir Ihnen helfen?</label><textarea id="f-msg" name="message" required></textarea></div>
             <div class="full form-foot">
-              <button type="submit" class="btn btn-violet btn-lg">Anfrage senden</button>
-              <small>Öffnet Ihr E-Mail-Programm. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</small>
+              <button type="submit" class="btn btn-white btn-lg">Jetzt kontaktieren</button>
+              <small>Öffnet Ihr E-Mail-Programm. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</small>
             </div>
             <p class="form-status full" data-form-status role="status"></p>
           </form>
@@ -206,12 +261,12 @@
   <footer class="site-footer" style="margin-top:0">
     <div class="container">
       <div class="footer-row">
-        <a href="#top" class="brand"><img src="assets/img/logo.svg" width="40" height="29" alt="" /><span>VortexUnit</span></a>
+        <a href="#top" class="brand"><img src="assets/img/hf/mark.webp" width="48" height="33" alt="" /><span>VortexUnit</span></a>
         <nav class="footer-links" aria-label="Rechtliches">
           <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="mailto:info@vortexunit.de">info@vortexunit.de</a>
         </nav>
       </div>
-      <div class="footer-bottom"><p>© <span data-year>2026</span> VortexUnit</p><p>Software. Daten. Wachstum.</p></div>
+      <div class="footer-bottom"><p>© <span data-year>2026</span> VortexUnit. Alle Rechte vorbehalten.</p><p>Software. Daten. Wachstum.</p></div>
     </div>
   </footer>
 
