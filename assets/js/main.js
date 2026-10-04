@@ -9,8 +9,20 @@
 
   /* ---- Header background once the page scrolls ---- */
   var header = document.querySelector(".site-header");
-  function onScroll() { if (header) header.classList.toggle("scrolled", window.scrollY > 12); }
+  var lastY = window.scrollY;
+  function onScroll() {
+    if (!header) return;
+    var y = window.scrollY;
+    header.classList.toggle("scrolled", y > 12);
+    // slide away while scrolling down (so it never covers the film), come back on any scroll up
+    if (Math.abs(y - lastY) > 6) {
+      var down = y > lastY && y > 120 && !document.body.classList.contains("nav-open");
+      header.classList.toggle("hide", down);
+      lastY = y;
+    }
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
+  if (header) header.addEventListener("focusin", function () { header.classList.remove("hide"); });
   onScroll();
 
   /* ---- Mobile navigation ---- */
@@ -60,7 +72,17 @@
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 
-  /* ---- Hero: light particles spiralling upward around the ribbon (the vortex) ---- */
+  /* ---- Hero exit: as the page scrolls, the hero fades, lifts and blurs while the film takes over ---- */
+  var heroBox = document.querySelector(".hero"), heroExit = 0;
+  function onHeroScroll() {
+    if (!heroBox) return;
+    heroExit = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.6)));
+    heroBox.style.setProperty("--exit", heroExit.toFixed(3));
+  }
+  window.addEventListener("scroll", onHeroScroll, { passive: true });
+  onHeroScroll();
+
+  /* ---- Hero: light particles spiralling upward around the ribbon (the vortex); on exit they scatter into dust ---- */
   var sw = document.getElementById("swirl");
   if (sw && sw.getContext && !reduceMotion) {
     var sctx = sw.getContext("2d"), SW = 0, SH = 0, sdpr = 1, parts = [], sRun = true;
@@ -90,9 +112,9 @@
         p.y -= p.v; p.a += p.w;
         if (p.y < -0.05) spawn(p);
         var h = Math.max(0, Math.min(1, p.y));
-        var radius = (wide ? 70 : 50) + (1 - h) * (wide ? 230 : 150);   // the vortex widens as it climbs
-        var x = cx + Math.cos(p.a) * radius;
-        var yy = top + h * (bottom - top) + Math.sin(p.a) * radius * 0.18;
+        var radius = ((wide ? 70 : 50) + (1 - h) * (wide ? 230 : 150)) * (1 + heroExit * 3.2);   // widens as it climbs; scatters on exit
+        var x = cx + Math.cos(p.a) * radius - heroExit * (cx - SW / 2);
+        var yy = top + h * (bottom - top) + Math.sin(p.a) * radius * (0.18 + heroExit * 0.5);
         var front = Math.sin(p.a) > 0;
         var alpha = (front ? 0.85 : 0.35) * Math.min(1, (1.05 - p.y) * 3) * Math.min(1, p.y * 6 + 0.2);
         sctx.beginPath();
@@ -123,7 +145,7 @@
       vh = window.innerHeight;
       var d = Math.min(window.devicePixelRatio || 1, 2);
       fc.width = Math.round(window.innerWidth * d); fc.height = Math.round(vh * d);
-      fadeIn = topOf(heroEl) + heroEl.offsetHeight - vh * 0.75;          // film starts as the hero leaves
+      fadeIn = topOf(heroEl) + vh * 0.18;                                 // film fades in while the hero dissolves
       fadeOut = endEl ? topOf(endEl) - vh * 0.75 : document.body.scrollHeight;  // last frame as the offer arrives, then it fades
       sceneY = scenes.map(function (el) { return topOf(el) + el.offsetHeight / 2 - vh / 2; });
       anchors = [[fadeIn, 0]].concat(sceneY.map(function (y, i) { return [y, sceneFrame[i] || 0]; })).concat([[fadeOut, FR - 1]]);
