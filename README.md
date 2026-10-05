@@ -56,13 +56,22 @@ Alle drei Seiten sind auf **österreichisches Recht** umgestellt (ECG, UGB, Medi
 GewO, DSGVO/DSG, Österreichische Datenschutzbehörde; Kleinunternehmer gem.
 § 6 Abs. 1 Z 27 UStG; Hosting Vercel). Offen sind nur noch:
 
-- [ ] Vor- und Nachname des Inhabers (Impressum, Datenschutz, AGB)
-- [ ] Straße und Hausnummer in 1220 Wien (Impressum, Datenschutz, AGB)
+- [ ] Vor- und Nachname des Inhabers (Impressum, Datenschutz, AGB + `/en/`)
+- [ ] Straße und Hausnummer in 1220 Wien (Impressum, Datenschutz, AGB + `/en/`)
 
 Gesucht/ersetzt werden die gelb markierten `<span class="ph">`-Felder.
 
 > 💡 Für maximale Rechtssicherheit die Texte einmal anwaltlich prüfen lassen — die
 > Vorlagen decken den aktuellen Stand (keine externen Dienste) ab.
+
+## 🌐 Sprachen
+
+Deutsch im Wurzelverzeichnis, Englisch unter `/en/` (`index.html`, `imprint.html`,
+`privacy.html`, `terms.html`). Der DE/EN-Schalter im Header führt jeweils zur
+entsprechenden Seite; `hreflang`-Tags und `sitemap.xml` sind gesetzt. Texte im
+Skript (Formularmeldungen, Menü, Einnahmen-Toasts) wählt `main.js` anhand von
+`<html lang>`. Die englischen Rechtstexte sind Übersetzungen; verbindlich ist die
+deutsche Fassung. Bei Textänderungen beide Sprachen pflegen.
 
 ## 📬 Kontaktformular
 

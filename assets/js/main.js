@@ -1,5 +1,24 @@
 /* VortexUnit — front-end interactions. No third-party scripts. */
 (function () {
+  /* Asset base taken from this script's own URL, so pages in /en/ load the same files */
+  var me = document.currentScript || document.querySelector('script[src*="assets/js/main.js"]');
+  var ASSETS = me ? me.src.replace(/js\/main\.js.*$/, "") : "assets/";
+  /* UI strings: the page language (<html lang>) picks German or English */
+  var T = (document.documentElement.lang || "de").indexOf("en") === 0 ? {
+    menuOpen: "Open menu", menuClose: "Close menu",
+    toasts: ["+ New membership", "+ Course sold", "+ Subscription renewed", "+ New customer"],
+    fallback: "Your email app should open now. Nothing happened? Copy your message and send it to ",
+    copyMsg: "Copy message", copyAddr: "Copy address", copied: "Copied ✓", copyPrompt: "Copy:",
+    missing: "Please fill in your name, email and message.", badEmail: "Please check your email address.",
+    defaultWho: "Business", emailLbl: "Email", iAm: "I am", subject: "Enquiry (%s) via vortexunit.de"
+  } : {
+    menuOpen: "Menü öffnen", menuClose: "Menü schließen",
+    toasts: ["+ Neue Mitgliedschaft", "+ Kurs verkauft", "+ Abo verlängert", "+ Neuer Kunde"],
+    fallback: "Ihr E-Mail-Programm sollte sich jetzt öffnen. Nichts passiert? Kopieren Sie Ihre Nachricht und senden Sie sie an ",
+    copyMsg: "Nachricht kopieren", copyAddr: "Adresse kopieren", copied: "Kopiert ✓", copyPrompt: "Zum Kopieren:",
+    missing: "Bitte füllen Sie Name, E-Mail und Nachricht aus.", badEmail: "Bitte prüfen Sie Ihre E-Mail-Adresse.",
+    defaultWho: "Unternehmen", emailLbl: "E-Mail", iAm: "Ich bin", subject: "Anfrage (%s) über vortexunit.de"
+  };
   "use strict";
   /* Always open at the top (the hero), unless a link points to a section */
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -29,13 +48,13 @@
   var toggle = document.querySelector(".nav-toggle");
   function closeMenu() {
     document.body.classList.remove("nav-open");
-    if (toggle) { toggle.setAttribute("aria-expanded", "false"); toggle.setAttribute("aria-label", "Menü öffnen"); }
+    if (toggle) { toggle.setAttribute("aria-expanded", "false"); toggle.setAttribute("aria-label", T.menuOpen); }
   }
   if (toggle) {
     toggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+      toggle.setAttribute("aria-label", open ? T.menuClose : T.menuOpen);
     });
     document.querySelectorAll(".mobile-menu a").forEach(function (a) { a.addEventListener("click", closeMenu); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
@@ -189,7 +208,7 @@
       var im = new Image();
       im.decoding = "async";
       im.onload = function () { current = -1; update(); };
-      im.src = "assets/img/hf/film-" + si + ".webp";
+      im.src = ASSETS + "img/hf/film-" + si + ".webp";
       sheets.push(im);
     }
     var ticking = false;
@@ -232,7 +251,7 @@
     el.classList.add("in");
     var toast = el.querySelector("[data-toast]");
     if (reduceMotion || !toast) return;
-    var msgs = ["+ Neue Mitgliedschaft", "+ Kurs verkauft", "+ Abo verlängert", "+ Neuer Kunde"], k = 0;
+    var msgs = T.toasts, k = 0;
     function show() { toast.firstChild.nodeValue = msgs[k++ % msgs.length] + " "; toast.classList.remove("show"); void toast.offsetWidth; toast.classList.add("show"); }
     setTimeout(show, 1600); setInterval(show, 3600);
   }, 0.4);
@@ -257,16 +276,16 @@
     function showFallback(to, body) {
       if (!status) return;
       status.innerHTML = "";
-      status.appendChild(document.createTextNode("Ihr E-Mail-Programm sollte sich jetzt öffnen. Nichts passiert? Kopieren Sie Ihre Nachricht und senden Sie sie an "));
+      status.appendChild(document.createTextNode(T.fallback));
       var a = document.createElement("a"); a.href = "mailto:" + to; a.textContent = to; status.appendChild(a);
       status.appendChild(document.createTextNode("."));
       var row = document.createElement("span"); row.className = "form-copy";
-      [["Nachricht kopieren", body], ["Adresse kopieren", to]].forEach(function (b) {
+      [[T.copyMsg, body], [T.copyAddr, to]].forEach(function (b) {
         var btn = document.createElement("button"); btn.type = "button"; btn.textContent = b[0];
         btn.addEventListener("click", function () {
-          var done = function () { btn.textContent = "Kopiert ✓"; };
-          if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(b[1]).then(done, function () { window.prompt("Zum Kopieren:", b[1]); });
-          else window.prompt("Zum Kopieren:", b[1]);
+          var done = function () { btn.textContent = T.copied; };
+          if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(b[1]).then(done, function () { window.prompt(T.copyPrompt, b[1]); });
+          else window.prompt(T.copyPrompt, b[1]);
         });
         row.appendChild(btn);
       });
@@ -279,15 +298,15 @@
       var to = form.getAttribute("data-mailto") || "contact@vortexunit.de";
       var name = val("name"), email = val("email"), message = val("message");
       if (!name || !email || !message) {
-        say("Bitte füllen Sie Name, E-Mail und Nachricht aus.");
+        say(T.missing);
         var first = !name ? form.elements.name : !email ? form.elements.email : form.elements.message;
         if (first) first.focus();
         return;
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Bitte prüfen Sie Ihre E-Mail-Adresse."); form.elements.email.focus(); return; }
-      var who = val("audience") || "Unternehmen";
-      var body = "Name: " + name + "\nE-Mail: " + email + "\nIch bin: " + who + "\n\n" + message + "\n";
-      window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Anfrage (" + who + ") über vortexunit.de") + "&body=" + encodeURIComponent(body);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say(T.badEmail); form.elements.email.focus(); return; }
+      var who = val("audience") || T.defaultWho;
+      var body = "Name: " + name + "\n" + T.emailLbl + ": " + email + "\n" + T.iAm + ": " + who + "\n\n" + message + "\n";
+      window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent(T.subject.replace("%s", who)) + "&body=" + encodeURIComponent(body);
       showFallback(to, body);
     });
   }

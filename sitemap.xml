@@ -4,4 +4,8 @@
   <url><loc>https://vortexunit.de/impressum.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://vortexunit.de/datenschutz.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://vortexunit.de/agb.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://vortexunit.de/en/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://vortexunit.de/en/imprint.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://vortexunit.de/en/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://vortexunit.de/en/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
