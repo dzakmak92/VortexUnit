@@ -76,8 +76,10 @@
   var heroBox = document.querySelector(".hero"), heroExit = 0;
   function onHeroScroll() {
     if (!heroBox) return;
-    heroExit = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.35)));
+    heroExit = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.2)));
     heroBox.style.setProperty("--exit", heroExit.toFixed(3));
+    // the first caption only appears once the hero has mostly gone
+    document.documentElement.style.setProperty("--intro", Math.max(0, Math.min(1, (heroExit - 0.55) / 0.45)).toFixed(3));
   }
   window.addEventListener("scroll", onHeroScroll, { passive: true });
   onHeroScroll();
@@ -138,14 +140,13 @@
     var heroEl = document.querySelector(".hero"), endEl = document.getElementById("angebot");
     var scenes = Array.prototype.slice.call(document.querySelectorAll("[data-scene]"));
     var sceneFrame = [5, 22, 41, 57];                       // chaos, vortex, milestones, result
-    var dots = document.querySelectorAll(".film-progress span"), prog = document.querySelector(".film-progress");
     var anchors = [], fadeIn = 0, fadeOut = 0, sceneY = [], vh = window.innerHeight;
     function topOf(el) { var y = 0; while (el) { y += el.offsetTop; el = el.offsetParent; } return y; }
     function layout() {
       vh = window.innerHeight;
       var d = Math.min(window.devicePixelRatio || 1, 2);
       fc.width = Math.round(window.innerWidth * d); fc.height = Math.round(vh * d);
-      fadeIn = topOf(heroEl) + vh * 0.04;                                 // film fades in while the hero dissolves
+      fadeIn = topOf(heroEl);                                 // film fades in while the hero dissolves
       fadeOut = endEl ? topOf(endEl) - vh * 0.75 : document.body.scrollHeight;  // last frame as the offer arrives, then it fades
       sceneY = scenes.map(function (el) { return topOf(el) + el.offsetHeight / 2 - vh / 2; });
       anchors = [[fadeIn, 0]].concat(sceneY.map(function (y, i) { return [y, sceneFrame[i] || 0]; })).concat([[fadeOut, FR - 1]]);
@@ -173,9 +174,8 @@
     function clamp(v) { return Math.max(0, Math.min(1, v)); }
     function update() {
       var y = window.scrollY;
-      var vis = clamp((y - fadeIn) / (vh * 0.35)) * (1 - clamp((y - fadeOut + vh * 0.2) / (vh * 0.6)));
+      var vis = clamp((y - fadeIn) / (vh * 0.2)) * (1 - clamp((y - fadeOut + vh * 0.2) / (vh * 0.6)));
       bg.style.opacity = vis.toFixed(3);
-      if (prog) prog.style.opacity = vis > 0.5 ? "1" : "0";
       if (vis > 0) {
         var n = Math.max(0, Math.min(FR - 1, Math.round(frameAt(y))));
         if (n !== current && drawFrame(n)) current = n;
@@ -184,9 +184,6 @@
       var near = 0;
       for (var i = 0; i < sceneY.length; i++) near = Math.max(near, 1 - Math.abs(y - sceneY[i]) / (vh * 0.7));
       if (veil) veil.style.opacity = (1 - clamp(near) * 0.92).toFixed(3);
-      var active = -1;
-      for (var j = 0; j < sceneY.length; j++) if (y >= sceneY[j] - vh * 0.5) active = j;
-      dots.forEach(function (el, i) { el.classList.toggle("on", i <= active); });
     }
     for (var si = 0; si < 5; si++) {
       var im = new Image();
