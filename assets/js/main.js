@@ -3,6 +3,10 @@
   /* Asset base taken from this script's own URL, so pages in /en/ load the same files */
   var me = document.currentScript || document.querySelector('script[src*="assets/js/main.js"]');
   var ASSETS = me ? me.src.replace(/js\/main\.js.*$/, "") : "assets/";
+  /* Zoom off: iOS Safari ignores user-scalable=no, so block its pinch gestures directly */
+  ["gesturestart", "gesturechange", "gestureend"].forEach(function (t) {
+    document.addEventListener(t, function (e) { e.preventDefault(); }, { passive: false });
+  });
   /* UI strings: the page language (<html lang>) picks German or English */
   var T = (document.documentElement.lang || "de").indexOf("en") === 0 ? {
     menuOpen: "Open menu", menuClose: "Close menu",

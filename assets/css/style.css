@@ -26,7 +26,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;
+html{scroll-behavior:smooth;touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;
   background:radial-gradient(1200px 700px at 85% -10%,#E4DBFF 0%,transparent 60%),radial-gradient(900px 600px at -10% 30%,#EFE9FF 0%,transparent 60%),var(--bg);background-attachment:fixed}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;background:transparent}
