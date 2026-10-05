@@ -52,26 +52,14 @@ Die rechtlichen Seiten enthalten Platzhalter in der Form `[ … ]` (im Text gelb
 markiert). Diese **müssen** durch echte Daten ersetzt werden — ein vollständiges
 Impressum ist in Deutschland gesetzlich vorgeschrieben.
 
-**`impressum.html`:**
-- [ ] Rechtsform (Einzelunternehmen / UG / GmbH …)
-- [ ] Vor- und Nachname des Inhabers / der Geschäftsführung
-- [ ] Vollständige Anschrift (Straße, Hausnummer, PLZ, Ort — kein Postfach)
-- [ ] Telefonnummer
-- [ ] Registergericht + Registernummer (falls eingetragen)
-- [ ] USt-IdNr. bzw. Hinweis auf Kleinunternehmerregelung (§ 19 UStG)
-- [ ] Inhaltlich Verantwortliche/r (§ 18 Abs. 2 MStV)
+Alle drei Seiten sind auf **österreichisches Recht** umgestellt (ECG, UGB, MedienG,
+GewO, DSGVO/DSG, Österreichische Datenschutzbehörde; Kleinunternehmer gem.
+§ 6 Abs. 1 Z 27 UStG; Hosting Vercel). Offen sind nur noch:
 
-**`datenschutz.html`:**
-- [ ] Verantwortlicher (Name + Anschrift)
-- [ ] Hosting-Anbieter (Name/Anschrift) + AVV
-- [ ] Zuständige Landes-Datenschutzbehörde
-- [ ] Abschnitt „Produkte/SaaS“ ergänzen, sobald Login/Zahlung (z. B. Stripe) läuft
-- [ ] Datum „Stand“
+- [ ] Vor- und Nachname des Inhabers (Impressum, Datenschutz, AGB)
+- [ ] Straße und Hausnummer in 1220 Wien (Impressum, Datenschutz, AGB)
 
-**`agb.html`:**
-- [ ] Firmierung/Anschrift, Preise/USt, Zahlungsintervalle & -dienstleister
-- [ ] Laufzeiten/Kündigungsfristen, ggf. Widerrufsbelehrung (B2C), Gerichtsstand
-- [ ] Datum „Stand“
+Gesucht/ersetzt werden die gelb markierten `<span class="ph">`-Felder.
 
 > 💡 Für maximale Rechtssicherheit die Texte einmal anwaltlich prüfen lassen — die
 > Vorlagen decken den aktuellen Stand (keine externen Dienste) ab.
@@ -80,11 +68,11 @@ Impressum ist in Deutschland gesetzlich vorgeschrieben.
 
 Das Formular im Abschnitt **Kontakt** der Startseite sendet **keine Daten an einen Server**. Beim Absenden
 öffnet es das E-Mail-Programm der Besucher:innen mit vorbereiteter Nachricht an
-`info@vortexunit.de`. Vorteile: kein Backend, kein weiterer Datenverarbeiter.
+`contact@vortexunit.de`. Vorteile: kein Backend, kein weiterer Datenverarbeiter.
 
 E-Mail-Adresse ändern: Attribut `data-mailto` im `<form>` in `index.html` sowie die
-`info@vortexunit.de`-Verweise anpassen. **Empfehlung:** eine Postfach-Adresse
-`info@vortexunit.de` einrichten (statt einer privaten Adresse).
+`contact@vortexunit.de`-Verweise anpassen. **Empfehlung:** eine Postfach-Adresse
+`contact@vortexunit.de` einrichten (statt einer privaten Adresse).
 
 Wer ein echtes Server-Formular möchte (z. B. Formspree, eigenes Backend, Supabase
 Edge Function): `action`/`method` bzw. den `submit`-Handler in `assets/js/main.js`
@@ -96,8 +84,10 @@ Reine statische Dateien — überall lauffähig. Optionen:
 
 - **GitHub Pages:** Repo-Settings → Pages → Branch wählen. Für die Domain eine
   `CNAME`-Datei mit `vortexunit.de` hinzufügen und DNS auf GitHub zeigen lassen.
-- **Netlify / Vercel / Cloudflare Pages:** Repo verbinden, kein Build-Command,
-  Publish-Verzeichnis = Projektwurzel.
+- **Vercel (gewählt):** Repo importieren, Framework „Other“, kein Build-Command,
+  Output-Verzeichnis = Projektwurzel. `vercel.json` setzt Sicherheits-Header und
+  Caching. Danach unter Settings → Domains `vortexunit.de` + `www.vortexunit.de`
+  hinzufügen und die angezeigten DNS-Einträge beim Domain-Anbieter setzen.
 - **Klassisches Webhosting:** Dateien per FTP in das Web-Root hochladen.
 
 Danach unter `vortexunit.de` erreichbar. Alle absoluten URLs in `sitemap.xml`,

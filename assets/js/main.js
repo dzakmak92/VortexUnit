@@ -276,7 +276,7 @@
     function val(name) { var el = form.elements[name]; return el && el.value ? String(el.value).trim() : ""; }
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      var to = form.getAttribute("data-mailto") || "info@vortexunit.de";
+      var to = form.getAttribute("data-mailto") || "contact@vortexunit.de";
       var name = val("name"), email = val("email"), message = val("message");
       if (!name || !email || !message) {
         say("Bitte füllen Sie Name, E-Mail und Nachricht aus.");
