@@ -218,6 +218,10 @@ p{margin:0}
 .form-foot small{color:rgba(255,255,255,.7);font-size:13px;max-width:30ch}
 .form-foot small a{color:#fff}
 .form-status{display:none;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.18);font-size:14.5px}
+.form-status a{color:#fff;font-weight:600}
+.form-copy{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.form-copy button{font:inherit;font-size:13.5px;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 14px;cursor:pointer}
+.form-copy button:hover{background:rgba(255,255,255,.28)}
 @media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:520px){.form{grid-template-columns:minmax(0,1fr)}}
 
@@ -264,3 +268,6 @@ p{margin:0}
   .js .reveal{opacity:1;transform:none;transition:none}
   .spiral,.spiral img,.spiral::before,.chip,.aud .art,.contact::before{animation:none}
 }
+
+/* Long German compounds (Datenschutzerklärung …) must wrap on phones */
+.page-head h1,.prose h2,.prose h3{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}

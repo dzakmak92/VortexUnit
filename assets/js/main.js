@@ -253,6 +253,26 @@
   if (form) {
     var status = form.querySelector("[data-form-status]");
     function say(text) { if (status) { status.textContent = text; status.style.display = "block"; } }
+    /* No mail app (e.g. webmail only)? Offer copy buttons so the visitor never hits a dead end. */
+    function showFallback(to, body) {
+      if (!status) return;
+      status.innerHTML = "";
+      status.appendChild(document.createTextNode("Ihr E-Mail-Programm sollte sich jetzt öffnen. Nichts passiert? Kopieren Sie Ihre Nachricht und senden Sie sie an "));
+      var a = document.createElement("a"); a.href = "mailto:" + to; a.textContent = to; status.appendChild(a);
+      status.appendChild(document.createTextNode("."));
+      var row = document.createElement("span"); row.className = "form-copy";
+      [["Nachricht kopieren", body], ["Adresse kopieren", to]].forEach(function (b) {
+        var btn = document.createElement("button"); btn.type = "button"; btn.textContent = b[0];
+        btn.addEventListener("click", function () {
+          var done = function () { btn.textContent = "Kopiert ✓"; };
+          if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(b[1]).then(done, function () { window.prompt("Zum Kopieren:", b[1]); });
+          else window.prompt("Zum Kopieren:", b[1]);
+        });
+        row.appendChild(btn);
+      });
+      status.appendChild(row);
+      status.style.display = "block";
+    }
     function val(name) { var el = form.elements[name]; return el && el.value ? String(el.value).trim() : ""; }
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
@@ -268,7 +288,7 @@
       var who = val("audience") || "Unternehmen";
       var body = "Name: " + name + "\nE-Mail: " + email + "\nIch bin: " + who + "\n\n" + message + "\n";
       window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Anfrage (" + who + ") über vortexunit.de") + "&body=" + encodeURIComponent(body);
-      say("Ihr E-Mail-Programm wurde mit der Nachricht geöffnet. Falls nicht, schreiben Sie bitte direkt an " + to + ".");
+      showFallback(to, body);
     });
   }
 })();
